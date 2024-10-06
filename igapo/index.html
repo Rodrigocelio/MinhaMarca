@@ -17,6 +17,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 
     <link href="brandbook.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
@@ -1428,68 +1429,93 @@
                             <div data-w-id="bdf375e4-f372-ad95-cceb-78bd47bb744a" class="footer-links-container"></div>
                         </div>
                         <div class="footer-bottom-section">
-                            <div>Desenvolvido por: <button popovertarget="my-popover">RCWEB</button> | all rights
+                            <div>Desenvolvido por: <button popovertarget="my-popover" >RCWEB</button> | all rights
                                 reserved</div>
                             <div>
 
-                                <div style="min-width: 340px;" class="card component-card" id="my-popover" popover>
+                                <div style="min-width: 370px;" class="card component-card" id="my-popover" popover>
                                     <!-- adicione um conteudo para o popover, labels e inputs (nome de usuario) e (email) -->
                                     <div>
-                                        <form action="https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77"
-                                            method="POST"
-                                            class="flex flex-col space-y-4 w-full max-w-md mx-auto items-start">
-                                        <h2 id="aria-label" class="text-2xl font-semibold text-gray-700">Contato</h2>
-                                            <input type="text" id="aria-label" name="aria-label"   > 
-                                            <label for="name" class="text-lg font-medium text-gray-700">Nome</label>
-                                            <input type="text" id="name" name="name" required
-                                                class="border border-gray-300 rounded-lg p-2 w-full">
+                                        <!-- https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77 -->
+                                        <form id="contactForm"
+                                            action="https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77"
+                                            method="POST">
+                                            <label>Assunto: <span class="pageTitle"></span></label>
 
-                                            <label for="email" class="text-lg font-medium text-gray-700">E-mail:</label>
-                                            <input type="email" id="email" name="email" required
-                                                class="border border-gray-300 rounded-lg p-2 w-full">
+                                            <label for="name">Nome:</label>
+                                            <input type="text" name="name" id="name" placeholder="Seu nome completo"
+                                                aria-label="Nome" required class="w-input" autocomplete="name"><br><br>
 
-                                            <label for="projeto"
-                                                class="text-lg font-medium text-gray-700">Projeto:</label>
-                                            <select id="projeto" name="projeto" required
-                                                class="border border-gray-300 rounded-lg p-2 w-full">
-                                                <option value="">Selecione</option>
-                                                <option value="criação-de-logo">Criação de logo</option>
-                                                <option value="manual-de-marca">Manual de Marca</option>
-                                                <option value="pagina-de-vendas">Página de vendas</option>
-                                                <option value="captaco-de-leads">Captação de leads</option>
-                                                <option value="Integração de sistema">Integração de sistema</option>
-                                            </select>
+                                            <label for="email">E-mail:</label>
+                                            <input type="email" name="email" id="email" placeholder="Seu e-mail"
+                                                aria-label="E-mail" required class="w-input"
+                                                autocomplete="email"><br><br>
 
-                                            <label for="prazo" class="text-lg font-medium text-gray-700">Prazo do
-                                                projeto:</label>
-                                            <select id="prazo" name="prazo" required
-                                                class="border border-gray-300 rounded-lg p-2 w-full">
-                                                <option value="" disabled selected>Selecione</option>
-                                                <option value="20 dias">20 dias</option>
-                                                <option value="30 dias">30 dias</option>
-                                                <option value="45 dias">45 dias</option>
-                                                <option value="60 dias">60 dias</option>
-                                                <option value="90 dias">90 dias</option>
-                                                <option value="120 dias">120 dias</option>
-                                                <option value="Prazo flexível">Prazo flexível</option>
-                                                <option value="Urgência ($ taxa adicional)">Urgência ($ taxa adicional)
-                                                </option>
-                                            </select>
-                                            <input type="submit" value="Enviar"
-                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            <label for="phone">Telefone:</label>
+                                            <input type="tel" name="phone" id="phone"
+                                                placeholder="Seu número de telefone" aria-label="Telefone" required
+                                                class="w-input" autocomplete="tel"><br><br>
+
+                                            <input type="submit" value="Enviar" class="btn-primary">
                                         </form>
-
+                                        <!-- SweetAlert2 JS -->
+                                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                        <!-- script popover form -->
                                         <script>
-                                            // Obtém o título da página
-                                            const pageTitle = document.title;
+                                            document.addEventListener('DOMContentLoaded', () => {
+                                                const form = document.getElementById('contactForm');
+                                                const pageTitle = document.title;
+                                                const pageTitleSpan = document.querySelector('.pageTitle');
 
-                                            // Encontra o formulário
-                                            const form = document.querySelector('form');
+                                                pageTitleSpan.textContent = pageTitle;
 
-                                            // Define o atributo  'aria-label' do formulário com o título da página
-                                            form.setAttribute('aria-label', pageTitle);
-                                            console.log(pageTitle);
+                                                form.addEventListener('submit', async (event) => {
+                                                    event.preventDefault();
+
+                                                    const formData = new FormData(form);
+                                                    formData.append('pageTitle', pageTitle);
+
+                                                    try {
+                                                        const response = await fetch(form.action, {
+                                                            method: 'POST',
+                                                            body: formData
+                                                        });
+
+                                                        if (response.ok) {
+                                                            const data = Object.fromEntries(formData);
+                                                            console.table(data);
+                                                            Swal.fire({
+                                                                title: 'Sucesso!',
+                                                                text: 'Mensagem enviada com sucesso!',
+                                                                icon: 'success',
+                                                                confirmButtonText: 'OK'
+                                                            });
+                                                            form.reset();
+                                                             // Limpa o formulário após submissão
+                                                             // Fecha popover
+                                                             document.getElementById("my-popover").style.display = "none";
+                                                        } else {
+                                                            Swal.fire({
+                                                                title: 'Erro!',
+                                                                text: 'Erro ao enviar mensagem. Tente novamente.',
+                                                                icon: 'error',
+                                                                confirmButtonText: 'OK'
+                                                            });
+                                                        }
+                                                    } catch (error) {
+                                                        console.error(error);
+                                                        Swal.fire({
+                                                            title: 'Erro!',
+                                                            text: 'Erro de conexão. Verifique sua internet e tente novamente.',
+                                                            icon: 'error',
+                                                            confirmButtonText: 'OK'
+                                                        });
+                                                    }
+
+                                                });
+                                            });
                                         </script>
+                                        <!-- popover end -->
 
                                     </div>
                                 </div>
@@ -1508,6 +1534,7 @@
     <div class="loading-bar-wrapper">
         <div class="loading-bar"></div>
     </div>
+
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65ad3a791732875dfeeaafbd"
         type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
