@@ -1435,28 +1435,62 @@
                                 <div style="min-width: 340px;" class="card component-card" id="my-popover" popover>
                                     <!-- adicione um conteudo para o popover, labels e inputs (nome de usuario) e (email) -->
                                     <div>
-                                        <form action="https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77" method="POST"
+                                        <form action="https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77"
+                                            method="POST"
                                             class="flex flex-col space-y-4 w-full max-w-md mx-auto items-start">
+                                        <h2 id="aria-label" class="text-2xl font-semibold text-gray-700">Contato</h2>
+                                            <input type="text" id="aria-label" name="aria-label"   > 
                                             <label for="name" class="text-lg font-medium text-gray-700">Nome</label>
                                             <input type="text" id="name" name="name" required
                                                 class="border border-gray-300 rounded-lg p-2 w-full">
+
                                             <label for="email" class="text-lg font-medium text-gray-700">E-mail:</label>
                                             <input type="email" id="email" name="email" required
                                                 class="border border-gray-300 rounded-lg p-2 w-full">
 
-                                            <label for="dropdown"
-                                                class="text-lg font-medium text-gray-700">Selecione:</label>
-                                            <select id="dropdown" name="dropdown" required
+                                            <label for="projeto"
+                                                class="text-lg font-medium text-gray-700">Projeto:</label>
+                                            <select id="projeto" name="projeto" required
                                                 class="border border-gray-300 rounded-lg p-2 w-full">
                                                 <option value="">Selecione</option>
                                                 <option value="criação-de-logo">Criação de logo</option>
                                                 <option value="manual-de-marca">Manual de Marca</option>
                                                 <option value="pagina-de-vendas">Página de vendas</option>
-                                                
+                                                <option value="captaco-de-leads">Captação de leads</option>
+                                                <option value="Integração de sistema">Integração de sistema</option>
+                                            </select>
+
+                                            <label for="prazo" class="text-lg font-medium text-gray-700">Prazo do
+                                                projeto:</label>
+                                            <select id="prazo" name="prazo" required
+                                                class="border border-gray-300 rounded-lg p-2 w-full">
+                                                <option value="" disabled selected>Selecione</option>
+                                                <option value="20 dias">20 dias</option>
+                                                <option value="30 dias">30 dias</option>
+                                                <option value="45 dias">45 dias</option>
+                                                <option value="60 dias">60 dias</option>
+                                                <option value="90 dias">90 dias</option>
+                                                <option value="120 dias">120 dias</option>
+                                                <option value="Prazo flexível">Prazo flexível</option>
+                                                <option value="Urgência ($ taxa adicional)">Urgência ($ taxa adicional)
+                                                </option>
                                             </select>
                                             <input type="submit" value="Enviar"
                                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                                         </form>
+
+                                        <script>
+                                            // Obtém o título da página
+                                            const pageTitle = document.title;
+
+                                            // Encontra o formulário
+                                            const form = document.querySelector('form');
+
+                                            // Define o atributo  'aria-label' do formulário com o título da página
+                                            form.setAttribute('aria-label', pageTitle);
+                                            console.log(pageTitle);
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>

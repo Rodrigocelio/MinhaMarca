@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igapo Formulario</title>
+    <link rel="stylesheet" href="brandbook.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+
+<body>
+    <section class="page-wrapper">
+        <div class="dashboard-main-content">
+            <div class="card component-card">
+                <form id="contactForm" action="https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77" method="POST">
+                    <label for="subject">Assunto: <span class="pageTitle"></span></label>
+
+                    <label for="name">Nome:</label>
+                    <input type="text" name="name" id="name" placeholder="Seu nome completo" aria-label="Nome" required class="w-input"><br><br>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail" aria-label="E-mail" required class="w-input"><br><br>
+
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Seu número de telefone" aria-label="Telefone" required class="w-input"><br><br>
+
+                    <label for="message">Mensagem:</label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Sua mensagem" aria-label="Mensagem" class="w-input"></textarea><br><br>
+
+                    <input type="submit" value="Enviar" class="w-input">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            const pageTitle = document.title;
+            const pageTitleSpan = document.querySelector('.pageTitle');
+            
+            pageTitleSpan.textContent = pageTitle;
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                
+                const formData = new FormData(form);
+                formData.append('pageTitle', pageTitle);
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        const data = Object.fromEntries(formData);
+                        console.table(data);
+                        Swal.fire({
+                            title: 'Sucesso!',
+                            text: 'Mensagem enviada com sucesso!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        });
+                        form.reset(); // Limpa o formulário após submissão
+                    } else {
+                        Swal.fire({
+                            title: 'Erro!',
+                            text: 'Erro ao enviar mensagem. Tente novamente.',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                } catch (error) {
+                    console.error(error);
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Erro de conexão. Verifique sua internet e tente novamente.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+                
+            });
+        });
+    </script>
+</body>
+
+</html>
