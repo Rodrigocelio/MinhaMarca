@@ -1429,12 +1429,8 @@
                             <div data-w-id="bdf375e4-f372-ad95-cceb-78bd47bb744a" class="footer-links-container"></div>
                         </div>
                         <div class="footer-bottom-section">
-                            <div>Desenvolvido por: <button popovertarget="my-popover">RCWEB</button> | all rights |  
-                                reserved</div> <!-- Widget do selo do Calendly - início -->
-                                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-                                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-                                <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/minhamarca/reuniao-1h', text: 'Agende um horário comigo', color: '#0069ff', textColor: '#ffffff', branding: undefined }); }</script>
-                                <!-- Widget do selo do Calendly - fim -->
+                            <div>Desenvolvido por: <button popovertarget="my-popover">RCWEB</button> | all rights |
+                                reserved</div>
                             <div>
 
                                 <div style="min-width: 370px;" class="card component-card" id="my-popover" popover>
@@ -1445,8 +1441,8 @@
                                             action="https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77"
                                             method="POST">
                                             <div>
-                                                <label>Assunto: <span class="pageTitle"></span></label>
-                                                
+                                                <h2 class="mg-bottom-24px text-603">Solicitação de Serviço</h2>
+
                                                 <div class="w-form-itens">
                                                     <label for="name">Nome:</label>
                                                     <input type="text" name="name" id="name"
@@ -1466,7 +1462,26 @@
                                                         required class="w-input" autocomplete="tel">
                                                 </div>
 
+                                                <div class="w-form-itens"> <label for="service">Serviços</label>
+                                                    <select class="w-select" name="service" id="service" required>
+                                                        <option value="">Selecione o Serviço</option>
+                                                        <option value="Manual de marca">Manual de marca</option>
+                                                        <option value="Pagina de Captura">Pagina de vendas</option>
+                                                        <option value="Desevolviemnto de Aplicativo">Desevolviemnto de
+                                                            Aplicativo</option>
+                                                        <option value="Chatbot">Outros</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="w-form-itens"> <label for="message">Mensagem:</label>
+                                                    <textarea style="max-height: 80px;" class="text-area w-input" type="text" name="message" id="message" cols="30" rows="10"
+                                                        placeholder="Sua mensagem" aria-label="Mensagem"
+                                                        required></textarea>
+                                                </div>
+
+                                                <div style="opacity: 0;"><span class="pageTitle"></span></div>
                                                 <div> <input type="submit" value="Enviar" class="btn-primary"> </div>
+
                                             </div>
                                         </form>
                                         <!-- SweetAlert2 JS -->
