@@ -194,7 +194,7 @@ function addMessage(role, date, msg) {
             <div>
               <span class="flex items-start">
                 <h4 class="text-sm font-bold text-slate-600">
-                  ${role === 'user' ? 'You' : chatbotObj.name}
+                  ${role === 'user' ? 'Você' : chatbotObj.name}
                 </h4>
                 <p class="text-xs font-regular text-gray-500 dark:text-slate-400 ml-2">
                   ${date}
