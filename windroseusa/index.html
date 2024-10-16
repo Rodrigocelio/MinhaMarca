@@ -43,8 +43,8 @@
                             <h1>Proposta de transformação digital</h1>
 
                         </div>
-                        <h1 class="text-500 bold">Escopo do projeto</h1>
-                        <p class="mg-bottom-0">O projeto tem como objetivo implementar um sistema automatizado de
+                        <h1 class="text-500 bold">Cliente: Jonathan Laia</h1>
+                       <!--  <p class="mg-bottom-0">O projeto tem como objetivo implementar um sistema automatizado de
                             Trade-In para dispositivos usados. Este sistema integrará as seguintes funcionalidades:
 
                             Captação de leads através de uma landing page otimizada, permitindo o cadastro de clientes
@@ -53,7 +53,7 @@
                             Gerenciamento de dados dos dispositivos através de APIs e integração com sistemas internos.
                             Geração automática de contratos para Trade-In com base nos dados dos dispositivos e
                             clientes, com possibilidade de impressão imediata.
-                            Notificação via e-mail e sistema para acompanhamento do processo pelos vendedores.</p>
+                            Notificação via e-mail e sistema para acompanhamento do processo pelos vendedores.</p>  -->
 
                     </div>
                    <!--  <div class="inner-container _576px _100-mbl">
@@ -69,7 +69,7 @@
                 <div class="divider"></div>
                 <div class="pd-top-24px"></div>
                 <h2 class="text-500 bold mg-bottom-12px">Proposta A</h2>
-                <p>Escolha os itens abaixo:</p>
+                <!--  <p>Escolha os itens abaixo:</p>  -->
                 <div class="card component-card">
                     <div class="grid-1-column">
                         <div class="card overflow-hidden border-none">
@@ -79,7 +79,7 @@
                                 <!-- Cabeçalho da Tabela -->
                                 <div class="user-table-row2 table-header">
                                     <div class="text-50 bold color-neutral-700">ITEM</div>
-                                    <div class="text-50 bold color-neutral-700">PERÍODO</div>
+                                   <div class="text-50 bold color-neutral-700">PERÍODO</div> 
                                     <div class="text-50 bold color-neutral-700">PREÇO</div>
                                 </div>
                                 <!-- Corpo da Tabela -->
@@ -87,50 +87,46 @@
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Página de
-                                                    Captura</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Landing Page (Captação de leads)</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo" class="color-badge green">Valor anual</div>
-                                        </div>
-                                        <div data-name="preco" id="valor01" class="text-100 medium">R$600</div>
+                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
+                                        </div> 
+                                        <div data-name="preco" id="valor01" class="text-100 medium">R$1000</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Gestão CRM
-                                                    e E-mail marketing</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Sistema de Agendamento online</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo" class="color-badge green">Valor anual</div>
-                                        </div>
-                                        <div data-name="preco" id="valor02" class="text-100 medium">R$1760</div>
+                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
+                                        </div> 
+                                        <div data-name="preco" id="valor02" class="text-100 medium">R$2000</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">SIC -
-                                                    Sistema de Automação</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">FAQ com IA (Frequently Asked Questions)</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo" class="color-badge green">Valor anual</div>
-                                        </div>
-                                        <div data-name="preco" id="valor03" class="text-100 medium">R$1400</div>
+                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
+                                        </div> 
+                                        <div data-name="preco" id="valor03" class="text-100 medium">R$750</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Campanha
-                                                    de lançamento</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Integração com Sistema de Pagamentos</div>
                                             </div>
                                         </div>
                                         <div>
                                             <div data-name="periodo" class="color-badge blue">Valor Mensal</div>
-                                        </div>
-                                        <div data-name="preco" id="valor04" class="text-100 medium">R$2850</div>
+                                        </div> 
+                                        <div data-name="preco" id="valor04" class="text-100 medium">R$750</div>
                                     </div>
                                 </div>
                             </div>
@@ -402,9 +398,9 @@
 
         document.getElementById('submit-btn').addEventListener('click', function () {
             // Seleciona todos os itens com 'data-name'
-            const items = document.querySelectorAll('[data-name="item"]');
+            const items = document.querySelectorAll('[<!-- data-name="item"]');
             const periodos = document.querySelectorAll('[data-name="periodo"]');
-            const precos = document.querySelectorAll('[data-name="preco"]');
+            const precos = document.querySelectorAll('[data-nam  -->e="preco"]');
 
             // Array para armazenar os dados
             const tableData = [];
