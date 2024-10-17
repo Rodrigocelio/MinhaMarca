@@ -7,21 +7,21 @@
     <title>Proposta Comercial</title>
     <link rel="stylesheet" href="style.css">
     <!-- Matomo -->
-<script>
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="https://minhamarca.matomo.cloud/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src='https://cdn.matomo.cloud/minhamarca.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  <!-- End Matomo Code -->
-  <!-- NuRelic key: f272dbe2a6e4755470934f5972252b81FFFFNRAL -->  
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "https://minhamarca.matomo.cloud/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; g.src = 'https://cdn.matomo.cloud/minhamarca.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+    <!-- NuRelic key: f272dbe2a6e4755470934f5972252b81FFFFNRAL -->
 </head>
 
 <body>
@@ -134,13 +134,13 @@
                                         <div>
                                             <div data-name="periodo" class="color-badge green">Vitalício</div>
                                         </div>
-                                        <div data-name="preco" id="valor03" class="text-100 medium">R$750</div>
+                                        <div data-name="preco" id="valor03" class="text-100 medium">R$550</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Integração
-                                                    com Sistema de Pagamentos</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Fluxo com
+                                                    link de Pagamentos</div>
                                             </div>
                                         </div>
                                         <div>
@@ -174,7 +174,7 @@
                                                         class="checkbox w-checkbox-input">
                                                     <span class="checkbox-button w-checkbox-input"></span>
                                                     <span class="checkbox-label-text" id="nome-plano-zap">Integração com
-                                                        WhatsApp</span>
+                                                        Sistema de Pagamento</span>
                                                 </label>
                                             </div>
                                             <div class="flex align-end gap-column-4px">
@@ -332,6 +332,20 @@
                                                         name="email" data-name="email" autocomplete="email"
                                                         placeholder="seuemail@dominio.com" id="email" required></div>
                                             </div>
+                                            <!-- adicione um dropdown -->
+                                            <div style="padding-top: 4px;">
+                                                <label for="combo">Selecione um combo</label>
+                                                <div>
+                                                    <select id="combo" name="combo" class="input w-input">
+                                                        <option value="https://pay.kiwify.com.br/YmzXfUH">combo1
+                                                        </option>
+                                                        <option value="https://pay.kiwify.com.br/QpItai2">combo2
+                                                        </option>
+                                                        <option value="https://pay.kiwify.com.br/XS2xC48">combo3
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <div class="buttons-container gap-row-12px">
                                                 <div style="padding-top: 16px;"> <button id="submit-btn" type="submit"
                                                         class="btn-card">Enviar proposta</button></div>
@@ -433,10 +447,14 @@
             const items = document.querySelectorAll('[data-name="item"]');
             const periodos = document.querySelectorAll('[data-name="periodo"]');
             const precos = document.querySelectorAll('[data-name="preco"]');
-
+            // adiciona um estado para o combo selecionado
+            const combo = document.getElementById('combo');
+            const selectedLink = combo.options[combo.selectedIndex].value;
+            
             const data = {
                 nome,
                 email,
+                selectedLink,
                 total
             };
 
@@ -467,7 +485,7 @@
             // Exibe os dados no console em formato de tabela
             console.table(tableData);
             console.log(data);
-            
+
 
 
         });
