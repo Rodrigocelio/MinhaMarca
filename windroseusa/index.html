@@ -369,8 +369,6 @@
             if (whatsappCheckbox.checked) {
                 const featureWhatsApp = Number(document.getElementById('valor-feature-whatsapp').textContent.replace('R$', '').replace('.', ''));
                 total += featureWhatsApp * dozeParcelas;
-
-                console.log(nomePlanoZap, featureWhatsApp * dozeParcelas);
             }
 
             // Adicionar valor do checkbox de Agente IA se estiver selecionado
@@ -378,8 +376,6 @@
             if (agenteIACheckbox.checked) {
                 const featureAgenteIA = Number(document.getElementById('feature-agente-ia').textContent.replace('R$', '').replace('.', ''));
                 total += featureAgenteIA * dozeParcelas;
-
-                console.log(nomePlanoAi, featureAgenteIA * dozeParcelas);
             }
 
             // Atualizar o subtotal na navbar
@@ -396,11 +392,21 @@
         // Chamar a função para inicializar o subtotal
         updateSubTotal();
 
-        document.getElementById('submit-btn').addEventListener('click', function () {
+        document.getElementById('submit-btn').addEventListener('click', function (e) {
+            e.preventDefault();
             // Seleciona todos os itens com 'data-name'
-            const items = document.querySelectorAll('[<!-- data-name="item"]');
+            const items = document.querySelectorAll('[data-name="item"]');
             const periodos = document.querySelectorAll('[data-name="periodo"]');
-            const precos = document.querySelectorAll('[data-nam  -->e="preco"]');
+            const precos = document.querySelectorAll('[data-name="preco"]');
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const data = {
+                nome,
+                email,
+                total
+            };
+
 
             // Array para armazenar os dados
             const tableData = [];
@@ -416,8 +422,29 @@
 
             // Exibe os dados no console em formato de tabela
             console.table(tableData);
+            console.log(data);
+
+
+            
         });
 
+      /*  document.getElementById('submit-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            const nome = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const data = {
+                nome,
+                email,
+                total
+            };
+            fetch('https://script.google.com/macros/s/AKfycbxVbWJ6QG_2qKk3kqfZyS4Kz6lq6cGf4jO9yj3Nz/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+        });  */
 
     </script>
     <script>
