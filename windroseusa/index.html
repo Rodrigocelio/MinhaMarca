@@ -406,7 +406,14 @@
                 email,
                 total
             };
-
+            
+            fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
             // Array para armazenar os dados
             const tableData = [];
@@ -437,7 +444,7 @@
                 email,
                 total
             };
-            fetch('https://script.google.com/macros/s/AKfycbxVbWJ6QG_2qKk3kqfZyS4Kz6lq6cGf4jO9yj3Nz/exec', {
+            fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
