@@ -44,7 +44,7 @@
 
                         </div>
                         <h1 class="text-500 bold">Cliente: Jonathan Laia</h1>
-                       <!--  <p class="mg-bottom-0">O projeto tem como objetivo implementar um sistema automatizado de
+                        <!--  <p class="mg-bottom-0">O projeto tem como objetivo implementar um sistema automatizado de
                             Trade-In para dispositivos usados. Este sistema integrará as seguintes funcionalidades:
 
                             Captação de leads através de uma landing page otimizada, permitindo o cadastro de clientes
@@ -56,7 +56,7 @@
                             Notificação via e-mail e sistema para acompanhamento do processo pelos vendedores.</p>  -->
 
                     </div>
-                   <!--  <div class="inner-container _576px _100-mbl">
+                    <!--  <div class="inner-container _576px _100-mbl">
                         <h1 class="text-500 bold">Objetivo</h1>
                         <p class="mg-bottom-0">Aumentar em 50% as vendas de smartphones durante o segundo semestre de
                             2024.
@@ -79,7 +79,7 @@
                                 <!-- Cabeçalho da Tabela -->
                                 <div class="user-table-row2 table-header">
                                     <div class="text-50 bold color-neutral-700">ITEM</div>
-                                   <div class="text-50 bold color-neutral-700">PERÍODO</div> 
+                                    <div class="text-50 bold color-neutral-700">PERÍODO</div>
                                     <div class="text-50 bold color-neutral-700">PREÇO</div>
                                 </div>
                                 <!-- Corpo da Tabela -->
@@ -87,50 +87,54 @@
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Landing Page (Captação de leads)</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Landing
+                                                    Page (Captação de leads)</div>
                                             </div>
                                         </div>
                                         <div>
                                             <div data-name="periodo" class="color-badge green">Vitalício</div>
-                                        </div> 
+                                        </div>
                                         <div data-name="preco" id="valor01" class="text-100 medium">R$1000</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Sistema de Agendamento online</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Sistema de
+                                                    Agendamento online</div>
                                             </div>
                                         </div>
                                         <div>
                                             <div data-name="periodo" class="color-badge green">Vitalício</div>
-                                        </div> 
+                                        </div>
                                         <div data-name="preco" id="valor02" class="text-100 medium">R$2000</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">FAQ com IA (Frequently Asked Questions)</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">FAQ com IA
+                                                    (Frequently Asked Questions)</div>
                                             </div>
                                         </div>
                                         <div>
                                             <div data-name="periodo" class="color-badge green">Vitalício</div>
-                                        </div> 
+                                        </div>
                                         <div data-name="preco" id="valor03" class="text-100 medium">R$750</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Integração com Sistema de Pagamentos</div>
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Integração
+                                                    com Sistema de Pagamentos</div>
                                             </div>
                                         </div>
                                         <div>
                                             <div data-name="periodo" class="color-badge blue">Valor Mensal</div>
-                                        </div> 
+                                        </div>
                                         <div data-name="preco" id="valor04" class="text-100 medium">R$750</div>
                                     </div>
                                 </div>
                             </div>
- <!-- Tabela de preços -->
+                            <!-- Tabela de preços -->
                             <!-- Botão de submit -->
                             <!-- <button id="submit-btn">Submit</button> -->
 
@@ -394,25 +398,42 @@
 
         document.getElementById('submit-btn').addEventListener('click', function (e) {
             e.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+
+            if (!nome || !email) {
+                alert('Preencha os campos de nome e email.');
+                return;
+            }
+
+            const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!regexEmail.test(email)) {
+                alert('E-mail inválido.');
+                return;
+            }
+
             // Seleciona todos os itens com 'data-name'
             const items = document.querySelectorAll('[data-name="item"]');
             const periodos = document.querySelectorAll('[data-name="periodo"]');
             const precos = document.querySelectorAll('[data-name="preco"]');
 
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
             const data = {
                 nome,
                 email,
                 total
             };
-            
+
             fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
+            }).then(() => {
+                console.log('Mensagem enviada com sucesso!');
+            }).catch((error) => {
+                console.error('Erro ao enviar a mensagem:', error);
             });
 
             // Array para armazenar os dados
@@ -430,28 +451,28 @@
             // Exibe os dados no console em formato de tabela
             console.table(tableData);
             console.log(data);
-
-
             
+
+
         });
 
-      /*  document.getElementById('submit-btn').addEventListener('click', function (e) {
-            e.preventDefault();
-            const nome = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const data = {
-                nome,
-                email,
-                total
-            };
-            fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-        });  */
+        /*  document.getElementById('submit-btn').addEventListener('click', function (e) {
+              e.preventDefault();
+              const nome = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+              const data = {
+                  nome,
+                  email,
+                  total
+              };
+              fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+              });
+          });  */
 
     </script>
     <script>
