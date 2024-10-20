@@ -346,36 +346,32 @@
                     </div>
                     <div class="card component-card">
                         <div style="align-items: center;" class="grid-2-columns _1-col-tablet">
-                            <div class="inner-container _600px _100-tablet">
-                                <div class="card pd-16px">
-                                    <div class="_2-items-wrap-container align-start mg-bottom-16px"><img
-                                            src="https://assets.website-files.com/645128e3dbdad55ed2803eff/6452caaa20baea2943b4c3e3_stat-card-square-icon-dashflow-webflow-template.png"
-                                            loading="eager" alt="" class="card-icon-square _26px">
-                                        <div id="dateNow" class="text-50 medium"></div>
-                                        <script>
-                                            const date = new Date();
-                                            document.getElementById('dateNow').innerHTML = date.toLocaleString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
-                                        </script>
-                                    </div>
-                                    <div class="text-50 medium mg-bottom-12px">Valor total</div>
-                                    <div class="_2-items-wrap-container amount-and-data">
-                                        <div id="subTotalColor" class="text-500 bold color-neutral-800">R$ </div>
-                                        <div>
-                                            <div class="card-amount-container green">
-                                                <div>24%</div>
-                                                <div class="dashflow-custom-icon icon-size-8px"></div>
-                                            </div>
+                            <div class="card pd-16px">
+                                <div class="_2-items-wrap-container align-start mg-bottom-16px"><img
+                                        src="https://assets.website-files.com/645128e3dbdad55ed2803eff/6452caaa20baea2943b4c3e3_stat-card-square-icon-dashflow-webflow-template.png"
+                                        loading="eager" alt="" class="card-icon-square _26px">
+                                    <div id="dateNow" class="text-50 medium"></div>
+                                    <script>
+                                        const date = new Date();
+                                        document.getElementById('dateNow').innerHTML = date.toLocaleString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+                                    </script>
+                                </div>
+                                <div class="text-50 medium mg-bottom-12px">Valor total</div>
+                                <div class="_2-items-wrap-container amount-and-data">
+                                    <div id="subTotalColor" class="text-500 bold color-neutral-800">R$ </div>
+                                    <div>
+                                        <div class="card-amount-container green">
+                                            <div>24%</div>
+                                            <div class="dashflow-custom-icon icon-size-8px"></div>
                                         </div>
                                     </div>
-
                                 </div>
 
-                                <div class="card pd-16px">
-                                    <!-- utilize o dropzone para adicionar a função de envio de imagem com no máximo 5mb -->
-                                    <div class="dropzone">
-                                        <!-- Add dropzone here -->
-                                    </div>  
-                                </div>
+                            </div>
+                            <div class="inner-container _600px _100-tablet">
+                               
+
+                                
                                 <div class="mg-bottom-0 w-form">
                                     <form id="email-form" name="email-form" data-name="Email Form" method="get"
                                         aria-label="Email Form">
@@ -540,27 +536,39 @@
             const combo = document.getElementById('combo');
             const selectedLink = combo.options[combo.selectedIndex].value;
 
-            const data = {
+
+            // Cria um objeto com os dados do formulário
+            const dataHook = {
                 nome,
                 email,
                 selectedLink,
-                total
+                total,
+                Periodos: Array.from(periodos).map(periodo => periodo.textContent),
+                Precos: Array.from(precos).map(preco => preco.textContent),
+                Items: Array.from(items).map(item => item.textContent)
             };
 
+            // Envia uma requisição POST para a API do Make
             fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
-            }).then(() => {
-                Swal.fire({
-                    title: 'Sucesso!',
-                    text: 'Mensagem enviada com sucesso!',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                });
-            }).catch((error) => {
+                body: JSON.stringify(dataHook)
+            })
+            .then((res) => {
+                // Se a requisição for bem-sucedida, mostra um alerta de sucesso
+                if (res.ok) {
+                    Swal.fire({
+                        title: 'Sucesso!',
+                        text: 'Mensagem enviada com sucesso!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            })
+            .catch((error) => {
+                // Se a requisição falhar, mostra um alerta de erro
                 Swal.fire({
                     title: 'Erro!',
                     text: 'Erro ao enviar a mensagem. Tente novamente.',
@@ -584,7 +592,7 @@
 
             // Exibe os dados no console em formato de tabela
             console.table(tableData);
-            console.log(data);
+            console.log(dataHook);
 
         });
 
