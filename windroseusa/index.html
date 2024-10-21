@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+    <script src="script-tabela-servicos.js" defer></script>
 
 </head>
 
@@ -160,50 +161,52 @@
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Landing
+                                                <div data-name="item1" class="text-100 bold color-neutral-800">Landing
                                                     Page (Captação de leads)</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
+                                            <div data-name="periodo1" class="color-badge green">Vitalício</div>
                                         </div>
-                                        <div data-name="preco" id="valor01" class="text-100 medium">R$1000</div>
+                                        <div data-name="preco1" id="valor01" class="text-100 medium">R$1000</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Sistema de
+                                                <div data-name="item2" class="text-100 bold color-neutral-800">Sistema
+                                                    de
                                                     Agendamento online</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo" class="color-badge blue">Valor Anual</div>
+                                            <div data-name="periodo2" class="color-badge blue">Valor Anual</div>
                                         </div>
-                                        <div data-name="preco" id="valor02" class="text-100 medium">R$600</div>
+                                        <div data-name="preco2" id="valor02" class="text-100 medium">R$600</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">FAQ com IA
+                                                <div data-name="item3" class="text-100 bold color-neutral-800">FAQ com
+                                                    IA
                                                     (Frequently Asked Questions)</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
+                                            <div data-name="periodo3" class="color-badge green">Vitalício</div>
                                         </div>
-                                        <div data-name="preco" id="valor03" class="text-100 medium">R$550</div>
+                                        <div data-name="preco3" id="valor03" class="text-100 medium">R$550</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item" class="text-100 bold color-neutral-800">Fluxo com
+                                                <div data-name="item4" class="text-100 bold color-neutral-800">Fluxo com
                                                     link de Pagamentos</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo" class="color-badge blue">Valor Anual</div>
+                                            <div data-name="periodo4" class="color-badge blue">Valor Anual</div>
                                         </div>
-                                        <div data-name="preco" id="valor04" class="text-100 medium">R$750</div>
+                                        <div data-name="preco4" id="valor04" class="text-100 medium">R$750</div>
                                     </div>
                                 </div>
                             </div>
@@ -369,9 +372,6 @@
 
                             </div>
                             <div class="inner-container _600px _100-tablet">
-                               
-
-                                
                                 <div class="mg-bottom-0 w-form">
                                     <form id="email-form" name="email-form" data-name="Email Form" method="get"
                                         aria-label="Email Form">
@@ -442,71 +442,49 @@
             </div>
         </main>
     </div>
-    <!-- dropzone -->
-    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SweetAlert2    -->
+    <script src="script-tabela-servicos.js" defer></script>
     <script>
-        // Inicializando o total
-        let total = 0;
+        // Função de cálculo e envio de dados
+        function enviarDadosCalculados() {
+            // Coletar os dados da tabela de "script-tabela-servicos.js"
+            const tabelaDados = coletarDadosTabela(); // função importada de script-tabela-servicos.js
 
-        // Função para atualizar o subtotal
-        function updateSubTotal() {
-            // Resetar o total
-            total = 0;
-
-            // Obter os valores dos serviços
+            // Calcular o total como antes
+            let total = 0;
             const valor1 = Number(document.getElementById('valor01').innerHTML.replace('R$', '').replace('.', ''));
             const valor2 = Number(document.getElementById('valor02').innerHTML.replace('R$', '').replace('.', ''));
             const valor3 = Number(document.getElementById('valor03').innerHTML.replace('R$', '').replace('.', ''));
             const valor4 = Number(document.getElementById('valor04').innerHTML.replace('R$', '').replace('.', ''));
 
-            // adicionar uma cont para valor fixo de 12 parcelas
             const dozeParcelas = 12;
-            // capturar o nome do plano selecionado id="nome-plano-zap"
-            const nomePlanoZap = document.getElementById('nome-plano-zap').textContent;
-            // capturar o nome do plano selecionado id="nome-plano-aibot"
-            const nomePlanoAi = document.getElementById('nome-plano-aiagent').textContent;
-
-
-            // Adicionar os valores fixos
             total += valor1 + valor2 + valor3 + valor4;
 
-            // Adicionar valor do checkbox de WhatsApp se estiver selecionado
+            // Adicionar valores adicionais de acordo com os checkboxes
             const whatsappCheckbox = document.getElementById('checkbox-zap');
             if (whatsappCheckbox.checked) {
                 const featureWhatsApp = Number(document.getElementById('valor-feature-whatsapp').textContent.replace('R$', '').replace('.', ''));
                 total += featureWhatsApp * dozeParcelas;
             }
 
-            // Adicionar valor do checkbox de Agente IA se estiver selecionado
             const agenteIACheckbox = document.getElementById('checkbox-aibot');
             if (agenteIACheckbox.checked) {
                 const featureAgenteIA = Number(document.getElementById('feature-agente-ia').textContent.replace('R$', '').replace('.', ''));
                 total += featureAgenteIA * dozeParcelas;
             }
 
-            // Atualizar o subtotal na navbar
+            // Atualizar o subtotal visualmente
             document.getElementById('subTotal').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
-
-            // Atualizar o subtotal na paleta de cores
             document.getElementById('subTotalColor').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
-        }
 
-        // Adicionando eventos de mudança aos checkboxes
-        document.getElementById('checkbox-zap').addEventListener('change', updateSubTotal);
-        document.getElementById('checkbox-aibot').addEventListener('change', updateSubTotal);
-
-        // Chamar a função para inicializar o subtotal
-        updateSubTotal();
-
-        document.getElementById('submit-btn').addEventListener('click', function (e) {
-            e.preventDefault();
-
+            // Coleta os dados do formulário
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
+            const combo = document.getElementById('combo').options[document.getElementById('combo').selectedIndex].value;
 
+            // Valida os dados do formulário
             if (!nome || !email) {
                 Swal.fire({
                     title: 'Erro!',
@@ -528,145 +506,56 @@
                 return;
             }
 
-            // Seleciona todos os itens com 'data-name'
-            const items = document.querySelectorAll('[data-name="item"]');
-            const periodos = document.querySelectorAll('[data-name="periodo"]');
-            const precos = document.querySelectorAll('[data-name="preco"]');
-            // adiciona um estado para o combo selecionado
-            const combo = document.getElementById('combo');
-            const selectedLink = combo.options[combo.selectedIndex].value;
-
-
-            // Cria um objeto com os dados do formulário
+            // Monta o objeto para enviar ao webhook
             const dataHook = {
                 nome,
                 email,
-                selectedLink,
+                combo,
                 total,
-                Periodos: Array.from(periodos).map(periodo => periodo.textContent),
-                Precos: Array.from(precos).map(preco => preco.textContent),
-                Items: Array.from(items).map(item => item.textContent)
+                tabela: tabelaDados // Inclui os dados da tabela aqui
             };
 
-            // Envia uma requisição POST para a API do Make
-            fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
+            // Envia os dados via webhook (mesma lógica do script-calculo-servicos.js)
+            fetch('https://wh203bd76e1863dd3288.free.beeceptor.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(dataHook)
             })
-            .then((res) => {
-                // Se a requisição for bem-sucedida, mostra um alerta de sucesso
-                if (res.ok) {
+                .then((res) => {
+                    if (res.ok) {
+                        Swal.fire({
+                            title: 'Sucesso!',
+                            text: 'Mensagem enviada com sucesso!',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                })
+                .catch((error) => {
                     Swal.fire({
-                        title: 'Sucesso!',
-                        text: 'Mensagem enviada com sucesso!',
-                        icon: 'success',
+                        title: 'Erro!',
+                        text: 'Erro ao enviar a mensagem. Tente novamente.',
+                        icon: 'error',
                         confirmButtonText: 'OK'
                     });
-                }
-            })
-            .catch((error) => {
-                // Se a requisição falhar, mostra um alerta de erro
-                Swal.fire({
-                    title: 'Erro!',
-                    text: 'Erro ao enviar a mensagem. Tente novamente.',
-                    icon: 'error',
-                    confirmButtonText: 'OK'
+                    console.error('Erro ao enviar a mensagem:', error);
                 });
-                console.error('Erro ao enviar a mensagem:', error);
-            });
 
-            // Array para armazenar os dados
-            const tableData = [];
-
-            // Itera sobre os itens e monta os dados para a tabela
-            for (let i = 0; i < items.length; i++) {
-                tableData.push({
-                    Item: items[i].textContent.trim(),
-                    Periodo: periodos[i].textContent.trim(),
-                    Preco: precos[i].textContent.trim()
-                });
-            }
-
-            // Exibe os dados no console em formato de tabela
-            console.table(tableData);
+            // Exibe os dados no console para verificação
+            console.table(tabelaDados);
             console.log(dataHook);
+        }
 
+        // Inicializa a função ao clicar no botão de envio
+        document.getElementById('submit-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            enviarDadosCalculados();
         });
 
-        /*  document.getElementById('submit-btn').addEventListener('click', function (e) {
-              e.preventDefault();
-              const nome = document.getElementById('name').value;
-              const email = document.getElementById('email').value;
-              const data = {
-                  nome,
-                  email,
-                  total
-              };
-              fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify(data)
-              });
-          });  */
-
     </script>
-    <script>
-        // Sincroniza o estado entre o checkbox e o botão
-        function syncButtonWithCheckbox(button, checkbox) {
-            // Função para alternar o estado do botão com base no checkbox
-            checkbox.addEventListener('change', function () {
-                if (checkbox.checked) {
-                    button.classList.add('selected');
-                } else {
-                    button.classList.remove('selected');
-                }
-            });
 
-            // Função para alternar o estado do checkbox quando o botão é clicado
-            button.addEventListener('click', function () {
-                checkbox.checked = !checkbox.checked; // Inverte o estado
-                checkbox.dispatchEvent(new Event('change')); // Atualiza o estado
-            });
-        }
-
-        // Obter referências ao botão e checkbox
-        const btnCardZap = document.getElementById('btn-feature-whatsapp');
-        const checkboxZap = document.getElementById('checkbox-zap');
-
-        // Sincroniza o botão com o checkbox
-        syncButtonWithCheckbox(btnCardZap, checkboxZap);
-    </script>
-    <script>
-        // Sincroniza o estado entre o checkbox e o botão
-        function syncButtonWithCheckbox(button, checkbox) {
-            // Função para alternar o estado do botão com base no checkbox
-            checkbox.addEventListener('change', function () {
-                if (checkbox.checked) {
-                    button.classList.add('selected');
-                } else {
-                    button.classList.remove('selected');
-                }
-            });
-
-            // Função para alternar o estado do checkbox quando o botão é clicado
-            button.addEventListener('click', function () {
-                checkbox.checked = !checkbox.checked; // Inverte o estado
-                checkbox.dispatchEvent(new Event('change')); // Atualiza o estado
-            });
-        }
-
-        // Obter referências ao botão e checkbox
-        const btnCardAi = document.getElementById('btn-feature-aiagent');
-        const checkboxAibot = document.getElementById('checkbox-aibot');
-
-        // Sincroniza o botão com o checkbox
-        syncButtonWithCheckbox(btnCardAi, checkboxAibot);
-    </script>
 
 </body>
 
