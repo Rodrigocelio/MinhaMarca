@@ -18,7 +18,7 @@ function coletarDadosTabela() {
     return dados;
 }
 
-// Função para enviar os dados
+/*
 async function enviarDados() {
     const dados = coletarDadosTabela();
     console.table(dados); // Exibe os dados no console de forma tabular
@@ -41,3 +41,4 @@ async function enviarDados() {
         console.error('Erro de conexão:', error);
     }
 }
+*/
