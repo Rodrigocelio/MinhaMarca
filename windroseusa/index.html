@@ -347,36 +347,30 @@
                     </div>
                     <div class="card component-card">
                         <div style="align-items: center;" class="grid-2-columns _1-col-tablet">
-                            <div class="inner-container _600px _100-tablet">
-                                <div class="card pd-16px">
-                                    <div class="_2-items-wrap-container align-start mg-bottom-16px"><img
-                                            src="https://assets.website-files.com/645128e3dbdad55ed2803eff/6452caaa20baea2943b4c3e3_stat-card-square-icon-dashflow-webflow-template.png"
-                                            loading="eager" alt="" class="card-icon-square _26px">
-                                        <div id="dateNow" class="text-50 medium"></div>
-                                        <script>
-                                            const date = new Date();
-                                            document.getElementById('dateNow').innerHTML = date.toLocaleString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
-                                        </script>
-                                    </div>
-                                    <div class="text-50 medium mg-bottom-12px">Valor total</div>
-                                    <div class="_2-items-wrap-container amount-and-data">
-                                        <div id="subTotalColor" class="text-500 bold color-neutral-800">R$ </div>
-                                        <div>
-                                            <div class="card-amount-container green">
-                                                <div>24%</div>
-                                                <div class="dashflow-custom-icon icon-size-8px"></div>
-                                            </div>
+                            <div class="card pd-16px">
+                                <div class="_2-items-wrap-container align-start mg-bottom-16px"><img
+                                        src="https://assets.website-files.com/645128e3dbdad55ed2803eff/6452caaa20baea2943b4c3e3_stat-card-square-icon-dashflow-webflow-template.png"
+                                        loading="eager" alt="" class="card-icon-square _26px">
+                                    <div id="dateNow" class="text-50 medium"></div>
+                                    <script>
+                                        const date = new Date();
+                                        document.getElementById('dateNow').innerHTML = date.toLocaleString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+                                    </script>
+                                </div>
+                                <div class="text-50 medium mg-bottom-12px">Valor total</div>
+                                <div class="_2-items-wrap-container amount-and-data">
+                                    <div id="subTotalColor" class="text-500 bold color-neutral-800">R$ </div>
+                                    <div>
+                                        <div class="card-amount-container green">
+                                            <div>24%</div>
+                                            <div class="dashflow-custom-icon icon-size-8px"></div>
                                         </div>
                                     </div>
-
                                 </div>
 
-                                <div class="card pd-16px">
-                                    <!-- utilize o dropzone para adicionar a função de envio de imagem com no máximo 5mb -->
-                                    <div class="dropzone">
-                                        <!-- Add dropzone here -->
-                                    </div>  
-                                </div>
+                            </div>
+                            <div class="inner-container _600px _100-tablet">
+                                
                                 <div class="mg-bottom-0 w-form">
                                     <form id="email-form" name="email-form" data-name="Email Form" method="get"
                                         aria-label="Email Form">
@@ -398,24 +392,26 @@
                                                 <div style="padding-top: 16px;">
                                                     <label for="combo">Confirme o valor do combo</label>
                                                     <div>
-                                                        <select id="combo" name="combo" class="w-input">
-                                                            <option value="https://pay.kiwify.com.br/YmzXfUH">Combo 01 -
-                                                                R$
-                                                                2.900
-                                                            </option>
-                                                            <option value="https://pay.kiwify.com.br/QpItai2">Combo 02 -
-                                                                R$
-                                                                5.740
-                                                            </option>
-                                                            <option value="https://pay.kiwify.com.br/XS2xC48">Combo 03 -
-                                                                R$
-                                                                9.580
-                                                            </option>
-                                                            <option value="https://pay.kiwify.com.br/yb5BtIe">Produto
-                                                                Teste - R$5,00
+                                                        <div class="select-wrapper">
+                                                            <select id="combo" name="combo" class="w-input">
+                                                                <option value="" disabled selected hidden>Selecione uma
+                                                                    opção</option>
+                                                                <option value="https://pay.kiwify.com.br/YmzXfUH">Combo 01 -
+                                                                    R$ 2.900
+                                                                </option>
+                                                                <option value="https://pay.kiwify.com.br/QpItai2">Combo 02 -
+                                                                    R$ 5.740
+                                                                </option>
+                                                                <option value="https://pay.kiwify.com.br/XS2xC48">Combo 03 -
+                                                                    R$ 9.580
+                                                                </option>
+                                                                <option value="https://pay.kiwify.com.br/yb5BtIe">Produto
+                                                                    Teste - R$5,00
 
-                                                            </option>
-                                                        </select>
+                                                                </option>
+                                                            </select>
+                                                            <div class="select-arrow"></div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- dropdown padrao -->
