@@ -1,6 +1,5 @@
 // script-tabela-servicos.js
 
-// Função para coletar dados da tabela
 function coletarDadosTabela() {
     const tabela = document.getElementById('tabela-precos');
     const linhas = tabela.querySelectorAll('.user-table-row2');

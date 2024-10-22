@@ -1,8 +1,8 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
-<head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+<head>
+    <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Proposta Comercial</title>
@@ -370,7 +370,7 @@
 
                             </div>
                             <div class="inner-container _600px _100-tablet">
-                                
+
                                 <div class="mg-bottom-0 w-form">
                                     <form id="email-form" name="email-form" data-name="Email Form" method="get"
                                         aria-label="Email Form">
@@ -396,16 +396,20 @@
                                                             <select id="combo" name="combo" class="w-input">
                                                                 <option value="" disabled selected hidden>Selecione uma
                                                                     opção</option>
-                                                                <option value="https://pay.kiwify.com.br/YmzXfUH">Combo 01 -
+                                                                <option value="https://pay.kiwify.com.br/YmzXfUH">Combo
+                                                                    01 -
                                                                     R$ 2.900
                                                                 </option>
-                                                                <option value="https://pay.kiwify.com.br/QpItai2">Combo 02 -
+                                                                <option value="https://pay.kiwify.com.br/QpItai2">Combo
+                                                                    02 -
                                                                     R$ 5.740
                                                                 </option>
-                                                                <option value="https://pay.kiwify.com.br/XS2xC48">Combo 03 -
+                                                                <option value="https://pay.kiwify.com.br/XS2xC48">Combo
+                                                                    03 -
                                                                     R$ 9.580
                                                                 </option>
-                                                                <option value="https://pay.kiwify.com.br/yb5BtIe">Produto
+                                                                <option value="https://pay.kiwify.com.br/yb5BtIe">
+                                                                    Produto
                                                                     Teste - R$5,00
 
                                                                 </option>
@@ -449,12 +453,30 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SweetAlert2    -->
     <script>
-        // Inicializando o total
+        // Inicializa o total
         let total = 0;
+
+        /////////////////////
+        // Função para coletar dados da tabela (importada do script-tabela-servicos.js)
+        function coletarDadosTabela() {
+            const tabela = document.getElementById('tabela-precos');
+            const linhas = tabela.querySelectorAll('.user-table-row2');
+            const dados = [];
+
+            linhas.forEach((linha) => {
+                const item = linha.querySelector('[data-name^="item"]')?.textContent.trim() || 'N/A';
+                const periodo = linha.querySelector('[data-name^="periodo"]')?.textContent.trim() || 'N/A';
+                const preco = linha.querySelector('[data-name^="preco"]')?.textContent.trim() || 'N/A';
+
+                dados.push({ item, periodo, preco });
+            });
+
+            return dados;
+        }
+        /////////////////////
 
         // Função para atualizar o subtotal
         function updateSubTotal() {
-            // Resetar o total
             total = 0;
 
             // Obter os valores dos serviços
@@ -463,16 +485,10 @@
             const valor3 = Number(document.getElementById('valor03').innerHTML.replace('R$', '').replace('.', ''));
             const valor4 = Number(document.getElementById('valor04').innerHTML.replace('R$', '').replace('.', ''));
 
-            // adicionar uma cont para valor fixo de 12 parcelas
-            const dozeParcelas = 12;
-            // capturar o nome do plano selecionado id="nome-plano-zap"
-            const nomePlanoZap = document.getElementById('nome-plano-zap').textContent;
-            // capturar o nome do plano selecionado id="nome-plano-aibot"
-            const nomePlanoAi = document.getElementById('nome-plano-aiagent').textContent;
-
-
             // Adicionar os valores fixos
             total += valor1 + valor2 + valor3 + valor4;
+
+            const dozeParcelas = 12;
 
             // Adicionar valor do checkbox de WhatsApp se estiver selecionado
             const whatsappCheckbox = document.getElementById('checkbox-zap');
@@ -488,26 +504,20 @@
                 total += featureAgenteIA * dozeParcelas;
             }
 
-            // Atualizar o subtotal na navbar
-            document.getElementById('subTotal').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
-
-            // Atualizar o subtotal na paleta de cores
-            document.getElementById('subTotalColor').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
+            // Atualizar o subtotal na navbar e na paleta de cores
+            const subTotalFormatted = 'R$ ' + total.toLocaleString('pt-BR');
+            document.getElementById('subTotal').innerHTML = subTotalFormatted;
+            document.getElementById('subTotalColor').innerHTML = subTotalFormatted;
         }
 
-        // Adicionando eventos de mudança aos checkboxes
-        document.getElementById('checkbox-zap').addEventListener('change', updateSubTotal);
-        document.getElementById('checkbox-aibot').addEventListener('change', updateSubTotal);
-
-        // Chamar a função para inicializar o subtotal
-        updateSubTotal();
-
-        document.getElementById('submit-btn').addEventListener('click', function (e) {
+        // Função para validar e enviar os dados
+        function handleSubmit(e) {
             e.preventDefault();
 
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
 
+            // Validação de nome e email
             if (!nome || !email) {
                 Swal.fire({
                     title: 'Erro!',
@@ -528,35 +538,49 @@
                 });
                 return;
             }
+            // Coleta os dados da tabela de serviços
+            const tabelaDados = coletarDadosTabela(); // Função importada de script-tabela-servicos.js
 
-            // Seleciona todos os itens com 'data-name'
-            const items = document.querySelectorAll('[data-name="item"]');
-            const periodos = document.querySelectorAll('[data-name="periodo"]');
-            const precos = document.querySelectorAll('[data-name="preco"]');
-            // adiciona um estado para o combo selecionado
+            // Obter o combo selecionado
             const combo = document.getElementById('combo');
             const selectedLink = combo.options[combo.selectedIndex].value;
 
+            // Cria um objeto com os dados do formulário
             const data = {
                 nome,
                 email,
                 selectedLink,
-                total
+                total,  // Variável total calculada anteriormente
+                tabela: tabelaDados  // Inclui os dados da tabela no JSON
             };
 
+            // Exibe os dados no console
+            console.table(data);
+
+            // Enviar os dados para o webhook via POST
             fetch('https://mmarca.free.beeceptor.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
-            }).then(() => {
-                Swal.fire({
-                    title: 'Sucesso!',
-                    text: 'Mensagem enviada com sucesso!',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                });
+                body: JSON.stringify(data)  // Envia o JSON com os dados da tabela e do formulário
+            }).then((response) => {
+                if (response.ok) {
+                    Swal.fire({
+                        title: 'Sucesso!',
+                        text: 'Mensagem enviada com sucesso!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Erro ao enviar a mensagem. Tente novamente.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                    console.error('Erro ao enviar a mensagem:', error);
+                }
             }).catch((error) => {
                 Swal.fire({
                     title: 'Erro!',
@@ -566,78 +590,38 @@
                 });
                 console.error('Erro ao enviar a mensagem:', error);
             });
+        }
+        
 
-            // Array para armazenar os dados
-            const tableData = [];
+        // Função para sincronizar o estado entre o botão e o checkbox
+        function syncButtonWithCheckbox(button, checkbox) {
+            checkbox.addEventListener('change', function () {
+                button.classList.toggle('selected', checkbox.checked);
+            });
 
-            // Itera sobre os itens e monta os dados para a tabela
-            for (let i = 0; i < items.length; i++) {
-                tableData.push({
-                    Item: items[i].textContent.trim(),
-                    Periodo: periodos[i].textContent.trim(),
-                    Preco: precos[i].textContent.trim()
-                });
-            }
+            button.addEventListener('click', function () {
+                checkbox.checked = !checkbox.checked;
+                checkbox.dispatchEvent(new Event('change')); // Atualiza o estado visual
+            });
+        }
 
-            // Exibe os dados no console em formato de tabela
-            console.table(tableData);
-            console.log(data);
+        // Configuração inicial e adição de eventos
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializa o subtotal ao carregar a página
+            updateSubTotal();
 
+            // Adiciona eventos de mudança aos checkboxes
+            document.getElementById('checkbox-zap').addEventListener('change', updateSubTotal);
+            document.getElementById('checkbox-aibot').addEventListener('change', updateSubTotal);
+
+            // Adiciona evento ao botão de envio
+            document.getElementById('submit-btn').addEventListener('click', handleSubmit);
+
+            // Sincroniza os botões com os checkboxes
+            syncButtonWithCheckbox(document.getElementById('btn-feature-whatsapp'), document.getElementById('checkbox-zap'));
+            syncButtonWithCheckbox(document.getElementById('btn-feature-aiagent'), document.getElementById('checkbox-aibot'));
         });
 
-
-    </script>
-    <script>
-        // Sincroniza o estado entre o checkbox e o botão
-        function syncButtonWithCheckbox(button, checkbox) {
-            // Função para alternar o estado do botão com base no checkbox
-            checkbox.addEventListener('change', function () {
-                if (checkbox.checked) {
-                    button.classList.add('selected');
-                } else {
-                    button.classList.remove('selected');
-                }
-            });
-
-            // Função para alternar o estado do checkbox quando o botão é clicado
-            button.addEventListener('click', function () {
-                checkbox.checked = !checkbox.checked; // Inverte o estado
-                checkbox.dispatchEvent(new Event('change')); // Atualiza o estado
-            });
-        }
-
-        // Obter referências ao botão e checkbox
-        const btnCardZap = document.getElementById('btn-feature-whatsapp');
-        const checkboxZap = document.getElementById('checkbox-zap');
-
-        // Sincroniza o botão com o checkbox
-        syncButtonWithCheckbox(btnCardZap, checkboxZap);
-    </script>
-    <script>
-        // Sincroniza o estado entre o checkbox e o botão
-        function syncButtonWithCheckbox(button, checkbox) {
-            // Função para alternar o estado do botão com base no checkbox
-            checkbox.addEventListener('change', function () {
-                if (checkbox.checked) {
-                    button.classList.add('selected');
-                } else {
-                    button.classList.remove('selected');
-                }
-            });
-
-            // Função para alternar o estado do checkbox quando o botão é clicado
-            button.addEventListener('click', function () {
-                checkbox.checked = !checkbox.checked; // Inverte o estado
-                checkbox.dispatchEvent(new Event('change')); // Atualiza o estado
-            });
-        }
-
-        // Obter referências ao botão e checkbox
-        const btnCardAi = document.getElementById('btn-feature-aiagent');
-        const checkboxAibot = document.getElementById('checkbox-aibot');
-
-        // Sincroniza o botão com o checkbox
-        syncButtonWithCheckbox(btnCardAi, checkboxAibot);
     </script>
 
 </body>
