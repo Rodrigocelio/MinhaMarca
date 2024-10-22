@@ -524,12 +524,14 @@
 
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
+            const combo = document.getElementById('combo');
+            const selectedLink = combo.options[combo.selectedIndex].value;
 
-            // Validação de nome e email
-            if (!nome || !email) {
+            // Validação de nome, email e seleção do combo
+            if (!nome || !email || !selectedLink) {
                 Swal.fire({
                     title: 'Erro!',
-                    text: 'Preencha os campos de nome e email.',
+                    text: 'Preencha todos os campos e selecione uma opção na caixa de seleção.',
                     icon: 'error',
                     confirmButtonText: 'OK'
                 });
@@ -546,12 +548,9 @@
                 });
                 return;
             }
+
             // Coleta os dados da tabela de serviços
             const tabelaDados = coletarDadosTabela(); // Função importada de script-tabela-servicos.js
-
-            // Obter o combo selecionado
-            const combo = document.getElementById('combo');
-            const selectedLink = combo.options[combo.selectedIndex].value;
 
             // Cria um objeto com os dados do formulário
             const data = {
