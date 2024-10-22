@@ -1,14 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
+<head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Proposta Comercial</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
-    <script src="script-tabela-servicos.js" defer></script>
 
 </head>
 
@@ -161,52 +161,50 @@
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item1" class="text-100 bold color-neutral-800">Landing
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Landing
                                                     Page (Captação de leads)</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo1" class="color-badge green">Vitalício</div>
+                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
                                         </div>
-                                        <div data-name="preco1" id="valor01" class="text-100 medium">R$1000</div>
+                                        <div data-name="preco" id="valor01" class="text-100 medium">R$1000</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item2" class="text-100 bold color-neutral-800">Sistema
-                                                    de
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Sistema de
                                                     Agendamento online</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo2" class="color-badge blue">Valor Anual</div>
+                                            <div data-name="periodo" class="color-badge blue">Valor Anual</div>
                                         </div>
-                                        <div data-name="preco2" id="valor02" class="text-100 medium">R$600</div>
+                                        <div data-name="preco" id="valor02" class="text-100 medium">R$600</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item3" class="text-100 bold color-neutral-800">FAQ com
-                                                    IA
+                                                <div data-name="item" class="text-100 bold color-neutral-800">FAQ com IA
                                                     (Frequently Asked Questions)</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo3" class="color-badge green">Vitalício</div>
+                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
                                         </div>
-                                        <div data-name="preco3" id="valor03" class="text-100 medium">R$550</div>
+                                        <div data-name="preco" id="valor03" class="text-100 medium">R$550</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item4" class="text-100 bold color-neutral-800">Fluxo com
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Fluxo com
                                                     link de Pagamentos</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo4" class="color-badge blue">Valor Anual</div>
+                                            <div data-name="periodo" class="color-badge blue">Valor Anual</div>
                                         </div>
-                                        <div data-name="preco4" id="valor04" class="text-100 medium">R$750</div>
+                                        <div data-name="preco" id="valor04" class="text-100 medium">R$750</div>
                                     </div>
                                 </div>
                             </div>
@@ -349,29 +347,36 @@
                     </div>
                     <div class="card component-card">
                         <div style="align-items: center;" class="grid-2-columns _1-col-tablet">
-                            <div class="card pd-16px">
-                                <div class="_2-items-wrap-container align-start mg-bottom-16px"><img
-                                        src="https://assets.website-files.com/645128e3dbdad55ed2803eff/6452caaa20baea2943b4c3e3_stat-card-square-icon-dashflow-webflow-template.png"
-                                        loading="eager" alt="" class="card-icon-square _26px">
-                                    <div id="dateNow" class="text-50 medium"></div>
-                                    <script>
-                                        const date = new Date();
-                                        document.getElementById('dateNow').innerHTML = date.toLocaleString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
-                                    </script>
-                                </div>
-                                <div class="text-50 medium mg-bottom-12px">Valor total</div>
-                                <div class="_2-items-wrap-container amount-and-data">
-                                    <div id="subTotalColor" class="text-500 bold color-neutral-800">R$ </div>
-                                    <div>
-                                        <div class="card-amount-container green">
-                                            <div>24%</div>
-                                            <div class="dashflow-custom-icon icon-size-8px"></div>
+                            <div class="inner-container _600px _100-tablet">
+                                <div class="card pd-16px">
+                                    <div class="_2-items-wrap-container align-start mg-bottom-16px"><img
+                                            src="https://assets.website-files.com/645128e3dbdad55ed2803eff/6452caaa20baea2943b4c3e3_stat-card-square-icon-dashflow-webflow-template.png"
+                                            loading="eager" alt="" class="card-icon-square _26px">
+                                        <div id="dateNow" class="text-50 medium"></div>
+                                        <script>
+                                            const date = new Date();
+                                            document.getElementById('dateNow').innerHTML = date.toLocaleString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+                                        </script>
+                                    </div>
+                                    <div class="text-50 medium mg-bottom-12px">Valor total</div>
+                                    <div class="_2-items-wrap-container amount-and-data">
+                                        <div id="subTotalColor" class="text-500 bold color-neutral-800">R$ </div>
+                                        <div>
+                                            <div class="card-amount-container green">
+                                                <div>24%</div>
+                                                <div class="dashflow-custom-icon icon-size-8px"></div>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
 
-                            </div>
-                            <div class="inner-container _600px _100-tablet">
+                                <div class="card pd-16px">
+                                    <!-- utilize o dropzone para adicionar a função de envio de imagem com no máximo 5mb -->
+                                    <div class="dropzone">
+                                        <!-- Add dropzone here -->
+                                    </div>  
+                                </div>
                                 <div class="mg-bottom-0 w-form">
                                     <form id="email-form" name="email-form" data-name="Email Form" method="get"
                                         aria-label="Email Form">
@@ -442,49 +447,71 @@
             </div>
         </main>
     </div>
+    <!-- dropzone -->
+    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SweetAlert2    -->
-    <script src="script-tabela-servicos.js" defer></script>
     <script>
-        // Função de cálculo e envio de dados
-        function enviarDadosCalculados() {
-            // Coletar os dados da tabela de "script-tabela-servicos.js"
-            const tabelaDados = coletarDadosTabela(); // função importada de script-tabela-servicos.js
+        // Inicializando o total
+        let total = 0;
 
-            // Calcular o total como antes
-            let total = 0;
+        // Função para atualizar o subtotal
+        function updateSubTotal() {
+            // Resetar o total
+            total = 0;
+
+            // Obter os valores dos serviços
             const valor1 = Number(document.getElementById('valor01').innerHTML.replace('R$', '').replace('.', ''));
             const valor2 = Number(document.getElementById('valor02').innerHTML.replace('R$', '').replace('.', ''));
             const valor3 = Number(document.getElementById('valor03').innerHTML.replace('R$', '').replace('.', ''));
             const valor4 = Number(document.getElementById('valor04').innerHTML.replace('R$', '').replace('.', ''));
 
+            // adicionar uma cont para valor fixo de 12 parcelas
             const dozeParcelas = 12;
+            // capturar o nome do plano selecionado id="nome-plano-zap"
+            const nomePlanoZap = document.getElementById('nome-plano-zap').textContent;
+            // capturar o nome do plano selecionado id="nome-plano-aibot"
+            const nomePlanoAi = document.getElementById('nome-plano-aiagent').textContent;
+
+
+            // Adicionar os valores fixos
             total += valor1 + valor2 + valor3 + valor4;
 
-            // Adicionar valores adicionais de acordo com os checkboxes
+            // Adicionar valor do checkbox de WhatsApp se estiver selecionado
             const whatsappCheckbox = document.getElementById('checkbox-zap');
             if (whatsappCheckbox.checked) {
                 const featureWhatsApp = Number(document.getElementById('valor-feature-whatsapp').textContent.replace('R$', '').replace('.', ''));
                 total += featureWhatsApp * dozeParcelas;
             }
 
+            // Adicionar valor do checkbox de Agente IA se estiver selecionado
             const agenteIACheckbox = document.getElementById('checkbox-aibot');
             if (agenteIACheckbox.checked) {
                 const featureAgenteIA = Number(document.getElementById('feature-agente-ia').textContent.replace('R$', '').replace('.', ''));
                 total += featureAgenteIA * dozeParcelas;
             }
 
-            // Atualizar o subtotal visualmente
+            // Atualizar o subtotal na navbar
             document.getElementById('subTotal').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
-            document.getElementById('subTotalColor').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
 
-            // Coleta os dados do formulário
+            // Atualizar o subtotal na paleta de cores
+            document.getElementById('subTotalColor').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
+        }
+
+        // Adicionando eventos de mudança aos checkboxes
+        document.getElementById('checkbox-zap').addEventListener('change', updateSubTotal);
+        document.getElementById('checkbox-aibot').addEventListener('change', updateSubTotal);
+
+        // Chamar a função para inicializar o subtotal
+        updateSubTotal();
+
+        document.getElementById('submit-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
-            const combo = document.getElementById('combo').options[document.getElementById('combo').selectedIndex].value;
 
-            // Valida os dados do formulário
             if (!nome || !email) {
                 Swal.fire({
                     title: 'Erro!',
@@ -506,56 +533,116 @@
                 return;
             }
 
-            // Monta o objeto para enviar ao webhook
-            const dataHook = {
+            // Seleciona todos os itens com 'data-name'
+            const items = document.querySelectorAll('[data-name="item"]');
+            const periodos = document.querySelectorAll('[data-name="periodo"]');
+            const precos = document.querySelectorAll('[data-name="preco"]');
+            // adiciona um estado para o combo selecionado
+            const combo = document.getElementById('combo');
+            const selectedLink = combo.options[combo.selectedIndex].value;
+
+            const data = {
                 nome,
                 email,
-                combo,
-                total,
-                tabela: tabelaDados // Inclui os dados da tabela aqui
+                selectedLink,
+                total
             };
 
-            // Envia os dados via webhook (mesma lógica do script-calculo-servicos.js)
-            fetch('https://wh203bd76e1863dd3288.free.beeceptor.com', {
+            fetch('https://mmarca.free.beeceptor.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(dataHook)
-            })
-                .then((res) => {
-                    if (res.ok) {
-                        Swal.fire({
-                            title: 'Sucesso!',
-                            text: 'Mensagem enviada com sucesso!',
-                            icon: 'success',
-                            confirmButtonText: 'OK'
-                        });
-                    }
-                })
-                .catch((error) => {
-                    Swal.fire({
-                        title: 'Erro!',
-                        text: 'Erro ao enviar a mensagem. Tente novamente.',
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                    console.error('Erro ao enviar a mensagem:', error);
+                body: JSON.stringify(data)
+            }).then(() => {
+                Swal.fire({
+                    title: 'Sucesso!',
+                    text: 'Mensagem enviada com sucesso!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
                 });
+            }).catch((error) => {
+                Swal.fire({
+                    title: 'Erro!',
+                    text: 'Erro ao enviar a mensagem. Tente novamente.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                console.error('Erro ao enviar a mensagem:', error);
+            });
 
-            // Exibe os dados no console para verificação
-            console.table(tabelaDados);
-            console.log(dataHook);
-        }
+            // Array para armazenar os dados
+            const tableData = [];
 
-        // Inicializa a função ao clicar no botão de envio
-        document.getElementById('submit-btn').addEventListener('click', function (e) {
-            e.preventDefault();
-            enviarDadosCalculados();
+            // Itera sobre os itens e monta os dados para a tabela
+            for (let i = 0; i < items.length; i++) {
+                tableData.push({
+                    Item: items[i].textContent.trim(),
+                    Periodo: periodos[i].textContent.trim(),
+                    Preco: precos[i].textContent.trim()
+                });
+            }
+
+            // Exibe os dados no console em formato de tabela
+            console.table(tableData);
+            console.log(data);
+
         });
 
-    </script>
 
+    </script>
+    <script>
+        // Sincroniza o estado entre o checkbox e o botão
+        function syncButtonWithCheckbox(button, checkbox) {
+            // Função para alternar o estado do botão com base no checkbox
+            checkbox.addEventListener('change', function () {
+                if (checkbox.checked) {
+                    button.classList.add('selected');
+                } else {
+                    button.classList.remove('selected');
+                }
+            });
+
+            // Função para alternar o estado do checkbox quando o botão é clicado
+            button.addEventListener('click', function () {
+                checkbox.checked = !checkbox.checked; // Inverte o estado
+                checkbox.dispatchEvent(new Event('change')); // Atualiza o estado
+            });
+        }
+
+        // Obter referências ao botão e checkbox
+        const btnCardZap = document.getElementById('btn-feature-whatsapp');
+        const checkboxZap = document.getElementById('checkbox-zap');
+
+        // Sincroniza o botão com o checkbox
+        syncButtonWithCheckbox(btnCardZap, checkboxZap);
+    </script>
+    <script>
+        // Sincroniza o estado entre o checkbox e o botão
+        function syncButtonWithCheckbox(button, checkbox) {
+            // Função para alternar o estado do botão com base no checkbox
+            checkbox.addEventListener('change', function () {
+                if (checkbox.checked) {
+                    button.classList.add('selected');
+                } else {
+                    button.classList.remove('selected');
+                }
+            });
+
+            // Função para alternar o estado do checkbox quando o botão é clicado
+            button.addEventListener('click', function () {
+                checkbox.checked = !checkbox.checked; // Inverte o estado
+                checkbox.dispatchEvent(new Event('change')); // Atualiza o estado
+            });
+        }
+
+        // Obter referências ao botão e checkbox
+        const btnCardAi = document.getElementById('btn-feature-aiagent');
+        const checkboxAibot = document.getElementById('checkbox-aibot');
+
+        // Sincroniza o botão com o checkbox
+        syncButtonWithCheckbox(btnCardAi, checkboxAibot);
+    </script>
 
 </body>
 
