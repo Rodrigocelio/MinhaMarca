@@ -94,6 +94,23 @@ p {
      object-fit: fill;
 }
 
+.background-layer-footer {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 0;
+  overflow: visible;
+  background-color: #edf1ef;
+  background: radial-gradient(circle at top, #ffffff, #cdd1cf);
+  background-clip: border-box;
+  -webkit-text-fill-color: inherit;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+
 .background-layer.bkg_footer {
   background-image: none;
   background-position: 0px 0px;
