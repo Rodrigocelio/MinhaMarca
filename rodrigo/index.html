@@ -42,7 +42,14 @@
 <body>
     <div class="page-wrapper">
         <div class="section-hero">
-            <div class="background-layer"></div>
+            <div class="background-layer "></div>
+            <style>
+                @media (max-width: 500px) {
+                    .background-layer {
+                        background: radial-gradient(circle at top, #ffffff, #3aeb93) !important;
+                    }
+                }
+            </style>
             <div class="hero-nav">
                 <a href="#" class="relume-link w-inline-block"><img src="images/RC-LOGO.svg" loading="lazy" alt="" class="image"></a>
                 <div class="hero-nav_button-wrapper">
