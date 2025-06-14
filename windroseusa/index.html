@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
+    <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Proposta Comercial</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
-    <script src="script-tabela-servicos.js" defer></script>
 
 </head>
 
@@ -161,52 +161,50 @@
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item1" class="text-100 bold color-neutral-800">Landing
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Landing
                                                     Page (Captação de leads)</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo1" class="color-badge green">Vitalício</div>
+                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
                                         </div>
-                                        <div data-name="preco1" id="valor01" class="text-100 medium">R$1000</div>
+                                        <div data-name="preco" id="valor01" class="text-100 medium">R$1000</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item2" class="text-100 bold color-neutral-800">Sistema
-                                                    de
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Sistema de
                                                     Agendamento online</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo2" class="color-badge blue">Valor Anual</div>
+                                            <div data-name="periodo" class="color-badge blue">Valor Anual</div>
                                         </div>
-                                        <div data-name="preco2" id="valor02" class="text-100 medium">R$600</div>
+                                        <div data-name="preco" id="valor02" class="text-100 medium">R$600</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item3" class="text-100 bold color-neutral-800">FAQ com
-                                                    IA
+                                                <div data-name="item" class="text-100 bold color-neutral-800">FAQ com IA
                                                     (Frequently Asked Questions)</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo3" class="color-badge green">Vitalício</div>
+                                            <div data-name="periodo" class="color-badge green">Vitalício</div>
                                         </div>
-                                        <div data-name="preco3" id="valor03" class="text-100 medium">R$550</div>
+                                        <div data-name="preco" id="valor03" class="text-100 medium">R$550</div>
                                     </div>
                                     <div class="user-table-row2">
                                         <div class="flex align-center gap-column-16px">
                                             <div>
-                                                <div data-name="item4" class="text-100 bold color-neutral-800">Fluxo com
+                                                <div data-name="item" class="text-100 bold color-neutral-800">Fluxo com
                                                     link de Pagamentos</div>
                                             </div>
                                         </div>
                                         <div>
-                                            <div data-name="periodo4" class="color-badge blue">Valor Anual</div>
+                                            <div data-name="periodo" class="color-badge blue">Valor Anual</div>
                                         </div>
-                                        <div data-name="preco4" id="valor04" class="text-100 medium">R$750</div>
+                                        <div data-name="preco" id="valor04" class="text-100 medium">R$750</div>
                                     </div>
                                 </div>
                             </div>
@@ -224,116 +222,124 @@
                     <p>Escolha os itens abaixo:</p>
                     <div class="card component-card">
                         <div class="grid-3-columns _1-col-tablet">
-                            <div class="card cardhover pd-24px---18px---28px">
-                                <div class="mg-bottom-12px">
-                                    <div class="_2-items-wrap-container gap-column-16px children-wrap-reverse">
-                                        <div>
-                                            <div class="checkbox-and-label-container">
-                                                <label class="checkbox-label w-checkbox-label" for="checkbox-zap">
-                                                    <input type="checkbox" id="checkbox-zap" name="checkbox-zap"
-                                                        class="checkbox w-checkbox-input">
-                                                    <span class="checkbox-button w-checkbox-input"></span>
-                                                    <span class="checkbox-label-text" id="nome-plano-zap">Integração com
-                                                        Sistema de Pagamento</span>
-                                                </label>
+                            <a style="text-decoration: none; cursor: pointer;" id="btn-feature-whatsapp">
+                                <div class="card cardhover pd-24px---18px---28px">
+                                    <div class="mg-bottom-12px">
+                                        <div class="_2-items-wrap-container gap-column-16px children-wrap-reverse">
+                                            <div>
+                                                <div class="checkbox-and-label-container">
+                                                    <label class="checkbox-label w-checkbox-label" for="checkbox-zap">
+                                                        <input type="checkbox" id="checkbox-zap" name="checkbox-zap"
+                                                            class="checkbox w-checkbox-input">
+                                                        <span class="checkbox-button w-checkbox-input"></span>
+                                                        <span class="checkbox-label-text" id="nome-plano-zap">Integração
+                                                            com
+                                                            Sistema de Pagamento</span>
+                                                    </label>
+                                                </div>
+                                                <div class="flex align-end gap-column-4px">
+                                                    <div id="valor-feature-whatsapp"
+                                                        class="text-600 bold color-neutral-800">R$120
+                                                    </div>
+                                                    <div class="mg-bottom-4px">
+                                                        <div class="text-100 medium color-neutral-600">/Mês</div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="flex align-end gap-column-4px">
-                                                <div id="valor-feature-whatsapp"
-                                                    class="text-600 bold color-neutral-800">R$120
-                                                </div>
-                                                <div class="mg-bottom-4px">
-                                                    <div class="text-100 medium color-neutral-600">/Mês</div>
-                                                </div>
+                                            <img src="assets/payment-feat.png" loading="eager" alt=""
+                                                class="card-icon-square _40px">
+                                        </div>
+                                    </div>
+                                    <div class="divider _20px min-h-1px"></div>
+                                    <div class="mg-bottom-20px">Adicionar Integração com WhatsApp.</div>
+                                    <div class="grid-1-column gap-row-12px mg-bottom-24px">
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Recebimento de Pagamentos
+                                                Imediatos</div>
+                                        </div>
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Encaminhamento Automático
                                             </div>
                                         </div>
-                                        <img src="assets/payment-feat.png" loading="eager" alt=""
-                                            class="card-icon-square _40px">
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Fluxo Simplificado</div>
+                                        </div>
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Envio de Recibo Automático
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-horizontal vertical-mbp">
+                                        <div class="buttons-container gap-row-12px"><button id="btn-feature-whatsapp"
+                                                class="btn-card">Adicionar</button> </div>
                                     </div>
                                 </div>
-                                <div class="divider _20px min-h-1px"></div>
-                                <div class="mg-bottom-20px">Adicionar Integração com WhatsApp.</div>
-                                <div class="grid-1-column gap-row-12px mg-bottom-24px">
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Recebimento de Pagamentos
-                                            Imediatos</div>
-                                    </div>
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Encaminhamento Automático
+                            </a>
+                            <a style="text-decoration: none; cursor: pointer;" id="btn-feature-aiagent">
+                                <div class="card cardhover pd-24px---18px---28px">
+                                    <div class="mg-bottom-12px">
+                                        <div class="_2-items-wrap-container gap-column-16px children-wrap-reverse">
+                                            <div>
+                                                <div class="checkbox-and-label-container">
+                                                    <label class="checkbox-label w-checkbox-label" for="checkbox-aibot">
+                                                        <input type="checkbox" id="checkbox-aibot" name="checkbox-aibot"
+                                                            class="checkbox w-checkbox-input">
+                                                        <span class="checkbox-button w-checkbox-input"></span>
+                                                        <span class="checkbox-label-text"
+                                                            id="nome-plano-aiagent">Integração
+                                                            com Agente IA</span>
+                                                    </label>
+                                                </div>
+                                                <div class="flex align-end gap-column-4px">
+                                                    <div id="feature-agente-ia" class="text-600 bold color-neutral-800">
+                                                        R$320</div>
+                                                    <div class="mg-bottom-4px">
+                                                        <div class="text-100 medium color-neutral-600">/Mês</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="assets/botfeature.png" loading="eager" alt=""
+                                                class="card-icon-square _40px">
                                         </div>
                                     </div>
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Fluxo Simplificado</div>
-                                    </div>
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Envio de Recibo Automático
+                                    <div class="divider _20px min-h-1px"></div>
+                                    <div class="mg-bottom-20px">Agente IA + ChatGPT</div>
+                                    <div class="grid-1-column gap-row-12px mg-bottom-24px">
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Automação de Atendimento ao
+                                                Cliente</div>
                                         </div>
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Integração com Marketplaces
+                                            </div>
+                                        </div>
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Análise de Dados e Relatórios
+                                            </div>
+                                        </div>
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Automação de Marketing</div>
+                                        </div>
+                                        <div class="flex align-start gap-column-6px"><img
+                                                src="assets/feature-icon-left.svg" loading="eager" alt="">
+                                            <div class="text-100 medium color-neutral-700">Gerenciamento de Feedbacks
+                                            </div>
+                                        </div>
+
                                     </div>
-                                </div>
-                                <div class="flex-horizontal vertical-mbp">
-                                    <div class="buttons-container gap-row-12px"><button id="btn-feature-whatsapp"
+                                    <div class="flex-horizontal vertical-mbp"></div>
+                                    <div class="buttons-container gap-row-12px"><button id="btn-feature-aiagent"
                                             class="btn-card">Adicionar</button> </div>
                                 </div>
-                            </div>
-                            <div class="card cardhover pd-24px---18px---28px">
-                                <div class="mg-bottom-12px">
-                                    <div class="_2-items-wrap-container gap-column-16px children-wrap-reverse">
-                                        <div>
-                                            <div class="checkbox-and-label-container">
-                                                <label class="checkbox-label w-checkbox-label" for="checkbox-aibot">
-                                                    <input type="checkbox" id="checkbox-aibot" name="checkbox-aibot"
-                                                        class="checkbox w-checkbox-input">
-                                                    <span class="checkbox-button w-checkbox-input"></span>
-                                                    <span class="checkbox-label-text" id="nome-plano-aiagent">Integração
-                                                        com Agente IA</span>
-                                                </label>
-                                            </div>
-                                            <div class="flex align-end gap-column-4px">
-                                                <div id="feature-agente-ia" class="text-600 bold color-neutral-800">
-                                                    R$320</div>
-                                                <div class="mg-bottom-4px">
-                                                    <div class="text-100 medium color-neutral-600">/Mês</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <img src="assets/botfeature.png" loading="eager" alt=""
-                                            class="card-icon-square _40px">
-                                    </div>
-                                </div>
-                                <div class="divider _20px min-h-1px"></div>
-                                <div class="mg-bottom-20px">Agente IA + ChatGPT</div>
-                                <div class="grid-1-column gap-row-12px mg-bottom-24px">
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Automação de Atendimento ao
-                                            Cliente</div>
-                                    </div>
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Integração com Marketplaces</div>
-                                    </div>
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Análise de Dados e Relatórios
-                                        </div>
-                                    </div>
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Automação de Marketing</div>
-                                    </div>
-                                    <div class="flex align-start gap-column-6px"><img src="assets/feature-icon-left.svg"
-                                            loading="eager" alt="">
-                                        <div class="text-100 medium color-neutral-700">Gerenciamento de Feedbacks</div>
-                                    </div>
-
-                                </div>
-                                <div class="flex-horizontal vertical-mbp"></div>
-                                <div class="buttons-container gap-row-12px"><button id="btn-feature-aiagent"
-                                        class="btn-card">Adicionar</button> </div>
-                            </div>
+                            </a>
 
 
                         </div>
@@ -372,6 +378,7 @@
 
                             </div>
                             <div class="inner-container _600px _100-tablet">
+
                                 <div class="mg-bottom-0 w-form">
                                     <form id="email-form" name="email-form" data-name="Email Form" method="get"
                                         aria-label="Email Form">
@@ -393,24 +400,30 @@
                                                 <div style="padding-top: 16px;">
                                                     <label for="combo">Confirme o valor do combo</label>
                                                     <div>
-                                                        <select id="combo" name="combo" class="w-input">
-                                                            <option value="https://pay.kiwify.com.br/YmzXfUH">Combo 01 -
-                                                                R$
-                                                                2.900
-                                                            </option>
-                                                            <option value="https://pay.kiwify.com.br/QpItai2">Combo 02 -
-                                                                R$
-                                                                5.740
-                                                            </option>
-                                                            <option value="https://pay.kiwify.com.br/XS2xC48">Combo 03 -
-                                                                R$
-                                                                9.580
-                                                            </option>
-                                                            <option value="https://pay.kiwify.com.br/yb5BtIe">Produto
-                                                                Teste - R$5,00
+                                                        <div class="select-wrapper">
+                                                            <select id="combo" name="combo" class="w-input">
+                                                                <option value="" disabled selected hidden>Selecione uma
+                                                                    opção</option>
+                                                                <option value="https://pay.kiwify.com.br/YmzXfUH">Combo
+                                                                    01 -
+                                                                    R$ 2.900
+                                                                </option>
+                                                                <option value="https://pay.kiwify.com.br/QpItai2">Combo
+                                                                    02 -
+                                                                    R$ 5.740
+                                                                </option>
+                                                                <option value="https://pay.kiwify.com.br/XS2xC48">Combo
+                                                                    03 -
+                                                                    R$ 9.580
+                                                                </option>
+                                                                <option value="https://pay.kiwify.com.br/yb5BtIe">
+                                                                    Produto
+                                                                    Teste - R$5,00
 
-                                                            </option>
-                                                        </select>
+                                                                </option>
+                                                            </select>
+                                                            <div class="select-arrow"></div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- dropdown padrao -->
@@ -442,53 +455,83 @@
             </div>
         </main>
     </div>
+    <!-- dropzone -->
+    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- SweetAlert2    -->
-    <script src="script-tabela-servicos.js" defer></script>
     <script>
-        // Função de cálculo e envio de dados
-        function enviarDadosCalculados() {
-            // Coletar os dados da tabela de "script-tabela-servicos.js"
-            const tabelaDados = coletarDadosTabela(); // função importada de script-tabela-servicos.js
+        // Inicializa o total
+        let total = 0;
 
-            // Calcular o total como antes
-            let total = 0;
+        /////////////////////
+        // Função para coletar dados da tabela (importada do script-tabela-servicos.js)
+        function coletarDadosTabela() {
+            const tabela = document.getElementById('tabela-precos');
+            const linhas = tabela.querySelectorAll('.user-table-row2');
+            const dados = [];
+
+            linhas.forEach((linha) => {
+                const item = linha.querySelector('[data-name^="item"]')?.textContent.trim() || 'N/A';
+                const periodo = linha.querySelector('[data-name^="periodo"]')?.textContent.trim() || 'N/A';
+                const preco = linha.querySelector('[data-name^="preco"]')?.textContent.trim() || 'N/A';
+
+                dados.push({ item, periodo, preco });
+            });
+
+            return dados;
+        }
+        /////////////////////
+
+        // Função para atualizar o subtotal
+        function updateSubTotal() {
+            total = 0;
+
+            // Obter os valores dos serviços
             const valor1 = Number(document.getElementById('valor01').innerHTML.replace('R$', '').replace('.', ''));
             const valor2 = Number(document.getElementById('valor02').innerHTML.replace('R$', '').replace('.', ''));
             const valor3 = Number(document.getElementById('valor03').innerHTML.replace('R$', '').replace('.', ''));
             const valor4 = Number(document.getElementById('valor04').innerHTML.replace('R$', '').replace('.', ''));
 
-            const dozeParcelas = 12;
+            // Adicionar os valores fixos
             total += valor1 + valor2 + valor3 + valor4;
 
-            // Adicionar valores adicionais de acordo com os checkboxes
+            const dozeParcelas = 12;
+
+            // Adicionar valor do checkbox de WhatsApp se estiver selecionado
             const whatsappCheckbox = document.getElementById('checkbox-zap');
             if (whatsappCheckbox.checked) {
                 const featureWhatsApp = Number(document.getElementById('valor-feature-whatsapp').textContent.replace('R$', '').replace('.', ''));
                 total += featureWhatsApp * dozeParcelas;
             }
 
+            // Adicionar valor do checkbox de Agente IA se estiver selecionado
             const agenteIACheckbox = document.getElementById('checkbox-aibot');
             if (agenteIACheckbox.checked) {
                 const featureAgenteIA = Number(document.getElementById('feature-agente-ia').textContent.replace('R$', '').replace('.', ''));
                 total += featureAgenteIA * dozeParcelas;
             }
 
-            // Atualizar o subtotal visualmente
-            document.getElementById('subTotal').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
-            document.getElementById('subTotalColor').innerHTML = 'R$ ' + total.toLocaleString('pt-BR');
+            // Atualizar o subtotal na navbar e na paleta de cores
+            const subTotalFormatted = 'R$ ' + total.toLocaleString('pt-BR');
+            document.getElementById('subTotal').innerHTML = subTotalFormatted;
+            document.getElementById('subTotalColor').innerHTML = subTotalFormatted;
+        }
 
-            // Coleta os dados do formulário
+        // Função para validar e enviar os dados
+        function handleSubmit(e) {
+            e.preventDefault();
+
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
-            const combo = document.getElementById('combo').options[document.getElementById('combo').selectedIndex].value;
+            const combo = document.getElementById('combo');
+            const selectedLink = combo.options[combo.selectedIndex].value;
 
-            // Valida os dados do formulário
-            if (!nome || !email) {
+            // Validação de nome, email e seleção do combo
+            if (!nome || !email || !selectedLink) {
                 Swal.fire({
                     title: 'Erro!',
-                    text: 'Preencha os campos de nome e email.',
+                    text: 'Preencha todos os campos e selecione uma opção na caixa de seleção.',
                     icon: 'error',
                     confirmButtonText: 'OK'
                 });
@@ -506,34 +549,37 @@
                 return;
             }
 
-            // Monta o objeto para enviar ao webhook
-            const dataHook = {
+            // Coleta os dados da tabela de serviços
+            const tabelaDados = coletarDadosTabela(); // Função importada de script-tabela-servicos.js
+
+            // Cria um objeto com os dados do formulário
+            const data = {
                 nome,
                 email,
-                combo,
-                total,
-                tabela: tabelaDados // Inclui os dados da tabela aqui
+                selectedLink,
+                total,  // Variável total calculada anteriormente
+                tabela: tabelaDados  // Inclui os dados da tabela no JSON
             };
 
-            // Envia os dados via webhook (mesma lógica do script-calculo-servicos.js)
-            fetch('https://wh203bd76e1863dd3288.free.beeceptor.com', {
+            // Exibe os dados no console
+            console.table(data);
+
+            // Enviar os dados para o webhook via POST
+            fetch('https://mmarca.free.beeceptor.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(dataHook)
-            })
-                .then((res) => {
-                    if (res.ok) {
-                        Swal.fire({
-                            title: 'Sucesso!',
-                            text: 'Mensagem enviada com sucesso!',
-                            icon: 'success',
-                            confirmButtonText: 'OK'
-                        });
-                    }
-                })
-                .catch((error) => {
+                body: JSON.stringify(data)  // Envia o JSON com os dados da tabela e do formulário
+            }).then((response) => {
+                if (response.ok) {
+                    Swal.fire({
+                        title: 'Sucesso!',
+                        text: 'Mensagem enviada com sucesso!',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                } else {
                     Swal.fire({
                         title: 'Erro!',
                         text: 'Erro ao enviar a mensagem. Tente novamente.',
@@ -541,21 +587,49 @@
                         confirmButtonText: 'OK'
                     });
                     console.error('Erro ao enviar a mensagem:', error);
+                }
+            }).catch((error) => {
+                Swal.fire({
+                    title: 'Erro!',
+                    text: 'Erro ao enviar a mensagem. Tente novamente.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
                 });
-
-            // Exibe os dados no console para verificação
-            console.table(tabelaDados);
-            console.log(dataHook);
+                console.error('Erro ao enviar a mensagem:', error);
+            });
         }
 
-        // Inicializa a função ao clicar no botão de envio
-        document.getElementById('submit-btn').addEventListener('click', function (e) {
-            e.preventDefault();
-            enviarDadosCalculados();
+
+        // Função para sincronizar o estado entre o botão e o checkbox
+        function syncButtonWithCheckbox(button, checkbox) {
+            checkbox.addEventListener('change', function () {
+                button.classList.toggle('selected', checkbox.checked);
+            });
+
+            button.addEventListener('click', function () {
+                checkbox.checked = !checkbox.checked;
+                checkbox.dispatchEvent(new Event('change')); // Atualiza o estado visual
+            });
+        }
+
+        // Configuração inicial e adição de eventos
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializa o subtotal ao carregar a página
+            updateSubTotal();
+
+            // Adiciona eventos de mudança aos checkboxes
+            document.getElementById('checkbox-zap').addEventListener('change', updateSubTotal);
+            document.getElementById('checkbox-aibot').addEventListener('change', updateSubTotal);
+
+            // Adiciona evento ao botão de envio
+            document.getElementById('submit-btn').addEventListener('click', handleSubmit);
+
+            // Sincroniza os botões com os checkboxes
+            syncButtonWithCheckbox(document.getElementById('btn-feature-whatsapp'), document.getElementById('checkbox-zap'));
+            syncButtonWithCheckbox(document.getElementById('btn-feature-aiagent'), document.getElementById('checkbox-aibot'));
         });
 
     </script>
-
 
 </body>
 

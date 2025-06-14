@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briefing - Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-8 space-y-8 sm:p-6">
+    <h1 class="text-3xl font-bold text-center text-gray-800">Briefing: Landing Page de Conversão</h1>
+
+    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+      <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 33%;"></div>
+    </div>
+
+    <div id="step-1" class="step">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">🧑 Dados do Cliente</h2>
+      <div class="space-y-4">
+
+        <label class="block">
+          <span class="text-gray-700">Nome:</span>
+          <input type="text" name="nome" class="mt-1 block w-full p-2 border rounded" required>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Sobrenome:</span>
+          <input type="text" name="sobrenome" class="mt-1 block w-full p-2 border rounded" required>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Email:</span>
+          <input type="email" name="email" class="mt-1 block w-full p-2 border rounded" required>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Orçamento estimado:</span>
+          <select name="orcamento" class="mt-1 block w-full p-2 border rounded">
+            <option value="">Selecione uma faixa</option>
+            <option>Até R$ 1.000</option>
+            <option>R$ 1.000 a R$ 3.000</option>
+            <option>R$ 3.000 a R$ 5.000</option>
+            <option>Acima de R$ 5.000</option>
+          </select>
+        </label>
+
+      </div>
+      <button onclick="nextStep(2); updateProgress(2)" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Próximo</button>
+    </div>
+
+    <div id="step-2" class="step hidden">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">🔧 Informações Técnicas</h2>
+      <div class="space-y-4">
+
+        <label class="block">
+          <span class="text-gray-700">Objetivo da página:</span>
+          <input type="text" name="objetivo" class="mt-1 block w-full p-2 border rounded" placeholder="Ex: captar leads, vender curso..." required>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Já possui domínio e hospedagem?</span>
+          <select name="dominio" class="mt-1 block w-full p-2 border rounded">
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Plataforma de pagamento:</span>
+          <input type="text" name="pagamento" class="mt-1 block w-full p-2 border rounded" placeholder="Ex: Hotmart, Eduzz, Stripe...">
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Ferramenta de automação / e-mail marketing:</span>
+          <input type="text" name="automacao" class="mt-1 block w-full p-2 border rounded" placeholder="Ex: RD Station, Mailchimp...">
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Integrações necessárias:</span>
+          <textarea name="integracoes" class="mt-1 block w-full p-2 border rounded" placeholder="WhatsApp, Telegram, Chatbot, CRM..."></textarea>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Data de lançamento desejada:</span>
+          <input type="date" name="prazo" class="mt-1 block w-full p-2 border rounded">
+        </label>
+      </div>
+
+      <button onclick="prevStep(1); updateProgress(1)" class="bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-700">Voltar</button>
+      <button onclick="nextStep(3); updateProgress(3)" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Próximo</button>
+    </div>
+
+    <div id="step-3" class="step hidden">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">🎨 Marca e Design</h2>
+      <div class="space-y-4">
+
+        <label class="block">
+          <span class="text-gray-700">Nome da marca / projeto:</span>
+          <input type="text" name="marca" class="mt-1 block w-full p-2 border rounded">
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Possui logotipo e identidade visual?</span>
+          <select name="identidade" class="mt-1 block w-full p-2 border rounded">
+            <option>Sim</option>
+            <option>Não</option>
+            <option>Parcialmente</option>
+          </select>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Estilo de comunicação desejado:</span>
+          <input type="text" name="tom" class="mt-1 block w-full p-2 border rounded" placeholder="Ex: técnico, descontraído, inspirador...">
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Referências visuais:</span>
+          <textarea name="referencias" class="mt-1 block w-full p-2 border rounded" placeholder="Links de sites ou exemplos que gosta..."></textarea>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Redes sociais ou site atual:</span>
+          <select multiple name="redes[]" class="mt-1 block w-full p-2 border rounded">
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+            <option value="x">X (Twitter)</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="youtube">YouTube</option>
+            <option value="outros">Outros</option>
+          </select>
+        </label>
+
+        <label class="block">
+          <span class="text-gray-700">Há prova social disponível (depoimentos, números, resultados)?</span>
+          <select name="prova_social" class="mt-1 block w-full p-2 border rounded">
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </label>
+      </div>
+
+      <button onclick="prevStep(2); updateProgress(2)" class="bg-gray-600 text-white px-6 py-2 rounded hover:bg-gray-700">Voltar</button>
+      <button id="submit-button" onclick="enviarFormulario()" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+        Enviar Briefing
+      </button>
+    </div>
+
+    <!-- Mensagem de sucesso -->
+    <p id="sucesso" class="text-green-600 text-center font-semibold hidden">Formulário enviado com sucesso!</p>
+  </div>
+
+  <script>
+    function enviarFormulario() {
+      const button = document.getElementById('submit-button');
+      button.disabled = true;
+      button.textContent = 'Enviando...';
+      setTimeout(() => {
+        document.getElementById("sucesso").classList.remove("hidden");
+        button.disabled = false;
+        button.textContent = 'Enviar Briefing';
+      }, 2000); // Simula envio
+    }
+
+    function nextStep(step) {
+      document.querySelectorAll('.step').forEach(el => el.classList.add('hidden'));
+      document.getElementById(`step-${step}`).classList.remove('hidden');
+    }
+
+    function prevStep(step) {
+      document.querySelectorAll('.step').forEach(el => el.classList.add('hidden'));
+      document.getElementById(`step-${step}`).classList.remove('hidden');
+    }
+  </script>
+
+  <script>
+    document.querySelectorAll('input, select, textarea').forEach(field => {
+      field.addEventListener('input', () => {
+        if (field.checkValidity()) {
+          field.classList.remove('border-red-500');
+          field.classList.add('border-green-500');
+        } else {
+          field.classList.remove('border-green-500');
+          field.classList.add('border-red-500');
+        }
+      });
+    });
+
+    const emailField = document.querySelector('input[name="email"]');
+    emailField.addEventListener('blur', () => {
+      const error = document.getElementById('email-error');
+      if (!emailField.checkValidity()) {
+        error.classList.remove('hidden');
+      } else {
+        error.classList.add('hidden');
+      }
+    });
+  </script>
+
+  <script>
+    function updateProgress(step) {
+      const progressBar = document.getElementById('progress-bar');
+      const progress = step * 33; // Ajuste conforme o número de etapas
+      progressBar.style.width = `${progress}%`;
+    }
+  </script>
+</body>
+</html>
