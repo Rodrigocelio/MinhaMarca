@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Mensagem para Webhook</title>
+</head>
+<body>
+    <h1>Enviar Mensagem</h1>
+    <form id="webhookForm">
+        <label for="message">Mensagem:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('webhookForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            const message = document.getElementById('message').value;
+
+            fetch('https://hook.us1.make.com/amtx29ynz849d84rqdojlro778p8dx77', {
+                method: 'POST',
