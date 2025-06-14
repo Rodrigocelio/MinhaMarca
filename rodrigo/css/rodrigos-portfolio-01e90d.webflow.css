@@ -78,6 +78,11 @@ p {
   text-align: center;
 }
 
+.padding-auto {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .background-layer {
   position: absolute;
   left: 0%;
@@ -91,7 +96,7 @@ p {
   background-clip: border-box;
   -webkit-text-fill-color: inherit;
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .background-layer-footer {
@@ -107,9 +112,8 @@ p {
   background-clip: border-box;
   -webkit-text-fill-color: inherit;
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
-
 
 .background-layer.bkg_footer {
   background-image: none;
@@ -124,7 +128,7 @@ p {
   margin-bottom: -8px;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-image: url('../images/Underline.svg');
+  background-image: url("../images/Underline.svg");
   background-position: 50% 110%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -273,7 +277,8 @@ p {
 .timeline_image-wrapper {
   overflow: hidden;
   border-radius: 12px;
-  background-image: linear-gradient(138deg, #000, transparent 28%), url('../images/Image-Background.png');
+  background-image: linear-gradient(138deg, #000, transparent 28%),
+    url("../images/Image-Background.png");
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
 }
@@ -639,7 +644,7 @@ p {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .text {
@@ -759,7 +764,7 @@ p {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .section-2 {
@@ -787,7 +792,7 @@ p {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .frame-482470 {
@@ -809,7 +814,7 @@ p {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .frame-482471 {
@@ -856,7 +861,7 @@ p {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .column {
@@ -890,7 +895,9 @@ p {
 
 .uui-footer04_legal-link {
   transition: all 300ms ease;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   color: #667085;
   font-size: 0.875rem;
   text-decoration: none;
@@ -919,7 +926,9 @@ p {
 }
 
 .uui-text-size-small {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   color: #475467;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -982,7 +991,9 @@ p {
   align-items: center;
   grid-column-gap: 0.5rem;
   transition: all 300ms ease;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   color: #475467;
   font-size: 1rem;
   font-weight: 600;
@@ -1046,7 +1057,7 @@ p {
   border-bottom-right-radius: 0.5rem;
   background-color: hsla(0, 0%, 100%, 0.2);
   -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 
 .uui-styleguide_logomark-bg {
@@ -1071,7 +1082,8 @@ p {
   flex: 0 0 auto;
   border: 0.1px solid #dae0e8;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 1px 0 rgba(16, 24, 40, 0.06), 0 1px 2px 0 rgba(16, 24, 40, 0.1);
+  box-shadow: 0 1px 1px 0 rgba(16, 24, 40, 0.06),
+    0 1px 2px 0 rgba(16, 24, 40, 0.1);
 }
 
 .uui-logo_component {
@@ -1107,7 +1119,7 @@ p {
 .uui-page-padding {
   padding-right: 2rem;
   padding-left: 2rem;
-  background-image: url('../images/backgorund_green_Gaussian-Blur.svg');
+  background-image: url("../images/backgorund_green_Gaussian-Blur.svg");
   background-position: 50% 50%;
   background-size: auto;
 }
@@ -1298,7 +1310,7 @@ p {
   }
 
   .uui-styleguide_logomark-bg {
-    background-image: url('../images/untitled-ui-logomark.svg');
+    background-image: url("../images/untitled-ui-logomark.svg");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1326,6 +1338,11 @@ p {
 
   h4 {
     font-size: 22px;
+  }
+
+  .padding-auto {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .padding-vertical-xxlarge {
@@ -1356,7 +1373,7 @@ p {
     grid-row-gap: 0px;
     font-size: 60px;
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .padding-vertical-xlarge {
@@ -1411,7 +1428,7 @@ p {
     flex-wrap: wrap;
     color: #fff;
     -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .heading-2 {
@@ -1442,13 +1459,13 @@ p {
 
 #w-node-_92c261be-34d6-69b5-6772-9e9f4aa042b0-3374a2f0 {
   -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
 }
 
 @media screen and (max-width: 991px) {
   #w-node-_92c261be-34d6-69b5-6772-9e9f4aa042b0-3374a2f0 {
     -ms-grid-column-align: center;
-        justify-self: center;
+    justify-self: center;
   }
 }
 
@@ -1457,240 +1474,240 @@ p {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-d5abcf1f-3370-3eea-ccfd-66f076babfe4-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-d5abcf1f-3370-3eea-ccfd-66f076babfe6-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: span 1;
     -ms-grid-column: span 1;
-        grid-column-start: span 1;
+    grid-column-start: span 1;
     -ms-grid-row-span: 1;
     grid-row-end: span 1;
     -ms-grid-row: span 1;
-        grid-row-start: span 1;
+    grid-row-start: span 1;
   }
 
   #w-node-_0488106f-ce92-9b7b-01c3-8ad75f3f5e36-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_0488106f-ce92-9b7b-01c3-8ad75f3f5e39-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_5b7ae63b-6f00-e542-a023-96ea5c4a96e4-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_5b7ae63b-6f00-e542-a023-96ea5c4a96e7-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-e0f4f25e-22f1-da39-65d5-a453ca30c732-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-e0f4f25e-22f1-da39-65d5-a453ca30c735-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-ca21cc2f-00d7-84a3-f446-587e32a59c01-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-ca21cc2f-00d7-84a3-f446-587e32a59c04-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_37ab9472-ef92-a1c7-f6c5-ffbef2542159-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_37ab9472-ef92-a1c7-f6c5-ffbef254215c-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_3f36ed1c-86ad-66f2-a7e0-a2e345d5b492-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_3f36ed1c-86ad-66f2-a7e0-a2e345d5b495-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_24c49997-4a3d-4bd7-0915-1f0630d904af-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_24c49997-4a3d-4bd7-0915-1f0630d904b2-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-cea39288-a86d-bc98-0716-192fe18bb832-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 3;
     -ms-grid-column: 2;
-        grid-column-start: 2;
+    grid-column-start: 2;
     -ms-grid-row-span: 1;
     grid-row-end: 2;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-cea39288-a86d-bc98-0716-192fe18bb835-3374a2f0 {
     -ms-grid-column-span: 1;
     grid-column-end: 2;
     -ms-grid-column: 1;
-        grid-column-start: 1;
+    grid-column-start: 1;
     -ms-grid-row-span: 2;
     grid-row-end: 3;
     -ms-grid-row: 1;
-        grid-row-start: 1;
+    grid-row-start: 1;
   }
 
   #w-node-_92c261be-34d6-69b5-6772-9e9f4aa04295-3374a2f0 {
     -ms-grid-column: span 1;
-        grid-column-start: span 1;
+    grid-column-start: span 1;
     -ms-grid-column-span: 1;
     grid-column-end: span 1;
     -ms-grid-row: span 1;
-        grid-row-start: span 1;
+    grid-row-start: span 1;
     -ms-grid-row-span: 1;
     grid-row-end: span 1;
   }
 }
 
 @font-face {
-  font-family: 'Relative';
-  src: url('../fonts/Relative-Bold.ttf') format('truetype');
+  font-family: "Relative";
+  src: url("../fonts/Relative-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Relative';
-  src: url('../fonts/Relative-Book.ttf') format('truetype');
+  font-family: "Relative";
+  src: url("../fonts/Relative-Book.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Relative';
-  src: url('../fonts/Relative-Medium.ttf') format('truetype');
+  font-family: "Relative";
+  src: url("../fonts/Relative-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
