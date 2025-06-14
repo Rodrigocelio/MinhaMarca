@@ -1341,8 +1341,8 @@ p {
   }
 
   .padding-auto {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 8vw;
+    padding-right: 8vw;
   }
 
   .padding-vertical-xxlarge {
@@ -1409,7 +1409,7 @@ p {
   .html-embed {
     overflow: visible;
     width: fit-content;
-    margin-left: 36px;
+    margin-left: 10vw;
   }
 
   .wrapper {
