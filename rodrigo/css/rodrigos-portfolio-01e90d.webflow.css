@@ -160,8 +160,8 @@ p {
 
 .timeline-main_heading-wrapper {
   max-width: 640px;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-right: auto;
+  margin-left: auto;
   color: #fff;
   text-align: center;
 }
