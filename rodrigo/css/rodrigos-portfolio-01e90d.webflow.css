@@ -92,7 +92,7 @@ p {
   z-index: 0;
   overflow: visible;
   background-color: #edf1ef;
-  background: radial-gradient(circle at top, #ffffff, #3aeb93);
+  background: radial-gradient(circle at top, #ffffff, #80bd8f);
   background-clip: border-box;
   -webkit-text-fill-color: inherit;
   -o-object-fit: fill;
@@ -536,6 +536,7 @@ p {
 
 .hero-nav {
   position: absolute;
+  z-index: 1000;
   left: 0%;
   top: 0%;
   right: 0%;
