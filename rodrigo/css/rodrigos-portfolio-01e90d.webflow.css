@@ -160,8 +160,8 @@ p {
 
 .timeline-main_heading-wrapper {
   max-width: 640px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 2rem;
+  margin-left: 2rem;
   color: #fff;
   text-align: center;
 }
@@ -1186,6 +1186,11 @@ p {
 
   h4 {
     font-size: 24px;
+  }
+
+  .timeline_component {
+  margin-right: 24px;
+  margin-left: 16px;
   }
 
   .padding-vertical-xxlarge {
