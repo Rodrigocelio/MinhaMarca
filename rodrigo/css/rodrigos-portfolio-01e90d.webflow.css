@@ -776,6 +776,7 @@ p {
 
 .frame-482469 {
   display: flex;
+  background-color: violet;
   padding: 10px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -1344,6 +1345,10 @@ p {
   .padding-auto {
     padding-left: 8vw;
     padding-right: 8vw;
+  }
+
+  .timeline-hero_heading-wrapper {
+    max-width: 300px;
   }
 
   .padding-vertical-xxlarge {
