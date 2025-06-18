@@ -16,7 +16,7 @@ h1 {
 .hit-the-floor {
     padding-top: 64px;
     color: #fff;
-    font-size: 12em;
+    font-size: 7em;
     font-weight: bold;
     font-family: Helvetica;
     text-shadow: 
@@ -42,4 +42,9 @@ h1 {
     background-color: #f1f1f1;
   }
   
+  @media screen and (max-width: 900px) {
+    .hit-the-floor {
+      font-size: 2.2em;
+    }
+  }
   
