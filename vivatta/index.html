@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Orçamento Dinâmico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <main class="bg-white rounded-lg shadow-lg max-w-xl w-full p-6">
+      <h1 class="text-2xl font-bold mb-4 text-center">
+        Orçamento Dinâmico - Vivatta
+      </h1>
+
+      <form id="budget-form" class="space-y-6" novalidate>
+        <fieldset>
+          <legend class="font-semibold text-lg mb-2">
+            Informações do Cliente
+          </legend>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label
+                for="client-name"
+                class="block text-sm font-medium text-gray-700"
+                >Nome do Cliente</label
+              >
+              <input
+                type="text"
+                id="client-name"
+                required
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                for="client-email"
+                class="block text-sm font-medium text-gray-700"
+                >E-mail do Cliente</label
+              >
+              <input
+                type="email"
+                id="client-email"
+                required
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="project-name"
+              class="block text-sm font-medium text-gray-700"
+              >Nome do Projeto</label
+            >
+            <input
+              type="text"
+              id="project-name"
+              required
+              class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="font-semibold text-lg mb-2">Produção de Conteúdo (Redes sociais e Midia DOOH)</legend>
+          <ul class="list-disc list-inside space-y-1 text-gray-600">
+            <li>Planejamento de calendário sazonal</li>
+            <li>Gravação de Depoimentos e entrega de chaves</li>
+            <li>Produção de postagens para calendário sazonal</li>
+            <li>Produção de vídeos para mídia exterior DOOH</li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend class="font-semibold text-lg mb-2">
+            Portal do Cliente Vivatta
+          </legend>
+          <p class="mb-3 text-gray-700">
+            Você deve aceitar todas as funcionalidades básicas para continuar.
+          </p>
+          <ul class="list-disc list-inside space-y-1 text-gray-600">
+            <li>Área do Cliente com login e cadastro</li>
+            <li>Emissão de boletos e segunda via</li>
+            <li>Visualização de contratos e documentos</li>
+            <li>Solicitação de manutenção</li>
+            <li>Consulta e atualização de dados pessoais</li>
+          </ul>
+          <label
+            for="accept-basics"
+            class="inline-flex items-center mt-4 cursor-pointer"
+          >
+            <input
+              type="checkbox"
+              id="accept-basics"
+              required
+              class="form-checkbox h-5 w-5 text-blue-600"
+            />
+            <span class="ml-2 text-gray-800"
+              >Aceito todas as funcionalidades básicas</span
+            >
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend class="font-semibold text-lg mb-2">
+            Funcionalidades Opcionais
+          </legend>
+          <p class="mb-3 text-gray-700">
+            Selecione as funcionalidades opcionais que deseja adicionar (R$50/h
+            cada):
+          </p>
+          <div class="space-y-3">
+            <label class="inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                name="optional"
+                value="50"
+                class="form-checkbox h-5 w-5 text-green-600"
+              />
+              <span class="ml-2">Dashboard personalizado (10h)</span>
+            </label>
+            <label class="inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                name="optional"
+                value="8"
+                class="form-checkbox h-5 w-5 text-green-600"
+              />
+              <span class="ml-2">Integração com sistema de CRM (8h)</span>
+            </label>
+            <label class="inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                name="optional"
+                value="6"
+                class="form-checkbox h-5 w-5 text-green-600"
+              />
+              <span class="ml-2">Notificações por e-mail (6h)</span>
+            </label>
+            <label class="inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                name="optional"
+                value="48"
+                class="form-checkbox h-5 w-5 text-green-600"
+              />
+              <span class="ml-2">Sistema de Indicação (48h)</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <section>
+          <h2 class="font-semibold text-lg mb-2">Resumo do Orçamento</h2>
+          <div class="p-4 bg-gray-100 rounded text-gray-800">
+            <p><strong>Valor por hora:</strong> R$50</p>
+            <p><strong>Horas básicas (fixas):</strong> 20h</p>
+            <p>
+              <strong>Horas opcionais selecionadas:</strong>
+              <span id="optional-hours">0</span>h
+            </p>
+            <p>
+              <strong>Total de horas:</strong> <span id="total-hours">20</span>h
+            </p>
+            <div class="mt-2">
+              <label for="dias-deslocamento" class="block text-sm font-medium text-gray-700">Diárias de deslocamento (R$120 cada):</label>
+              <input type="number" id="dias-deslocamento" min="0" value="0" class="mt-1 w-24 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500" />
+              <span class="ml-2 text-gray-700">Total: R$ <span id="valor-deslocamento">0.00</span></span>
+            </div>
+            <p class="mt-2 text-xl font-bold">
+              Valor total: R$ <span id="total-price">1000.00</span>
+            </p>
+            <p class="mt-2 text-lg">
+              Total de parcelas (12x): R$ <span id="total-parcelas">83.33</span>
+            </p>
+          </div>
+        </section>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded transition"
+        >
+          Gerar Orçamento
+        </button>
+      </form>
+
+      <div
+        id="result-message"
+        class="mt-6 p-4 bg-green-100 text-green-900 rounded hidden"
+        role="alert"
+      ></div>
+    </main>
+
+    <script>
+      const HOURLY_RATE = 50;
+      const BASIC_HOURS = 120;
+
+      const form = document.getElementById("budget-form");
+      const optionalCheckboxes = document.querySelectorAll(
+        'input[name="optional"]'
+      );
+      const acceptBasicsCheckbox = document.getElementById("accept-basics");
+      const optionalHoursEl = document.getElementById("optional-hours");
+      const totalHoursEl = document.getElementById("total-hours");
+      const totalPriceEl = document.getElementById("total-price");
+      const totalParcelasEl = document.getElementById("total-parcelas");
+      const resultMessage = document.getElementById("result-message");
+      const deslocamentoInput = document.getElementById("dias-deslocamento");
+      const valorDeslocamentoEl = document.getElementById("valor-deslocamento");
+
+      const calculateOptionalHours = () => {
+        return Array.from(optionalCheckboxes)
+          .filter((cb) => cb.checked)
+          .reduce((sum, cb) => sum + parseInt(cb.value, 10), 0);
+      };
+
+      const updateBudget = () => {
+        const optionalHours = calculateOptionalHours();
+        const totalHours = BASIC_HOURS + optionalHours;
+        const totalPriceHoras = totalHours * HOURLY_RATE;
+        const diasDeslocamento = parseInt(deslocamentoInput.value, 10) || 0;
+        const valorDeslocamento = diasDeslocamento * 120 * 12;
+        const totalPrice = totalPriceHoras + valorDeslocamento;
+
+        optionalHoursEl.textContent = optionalHours;
+        totalHoursEl.textContent = totalHours;
+        valorDeslocamentoEl.textContent = valorDeslocamento.toFixed(2);
+        totalPriceEl.textContent = totalPrice.toFixed(2);
+        totalParcelasEl.textContent = (totalPrice / 12).toFixed(2);
+      };
+
+      optionalCheckboxes.forEach((cb) =>
+        cb.addEventListener("change", updateBudget)
+      );
+      deslocamentoInput.addEventListener("input", updateBudget);
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!acceptBasicsCheckbox.checked) {
+          alert(
+            "Você deve aceitar todas as funcionalidades básicas para continuar."
+          );
+          return;
+        }
+
+        const totalHours = parseInt(totalHoursEl.textContent, 10);
+        const totalPrice = parseFloat(totalPriceEl.textContent);
+
+        resultMessage.textContent = `Orçamento aprovado! Total de horas: ${totalHours}h | Valor total: R$ ${totalPrice.toFixed(
+          2
+        )}`;
+        resultMessage.classList.remove("hidden");
+        resultMessage.scrollIntoView({ behavior: "smooth" });
+      });
+
+      updateBudget();
+    </script>
+  </body>
+</html>
