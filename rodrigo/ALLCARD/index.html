@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Ideação de Produto Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-gray-400 rounded-2xl shadow-lg p-8 w-full max-w-3xl">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+      Formulário de Ideação de Produto Digital
+    </h1>
+
+    <form class="space-y-6">
+      <!-- Problema -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">1. Qual problema você quer resolver?</label>
+        <textarea class="w-full p-3 border rounded-lg focus:ring focus:ring-green-400" rows="3" placeholder="Descreva o problema principal..."></textarea>
+      </div>
+
+      <!-- Público-Alvo -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">2. Quem é o público-alvo?</label>
+        <input type="text" class="w-full p-3 border rounded-lg focus:ring focus:ring-green-400" placeholder="Ex: estudantes, pequenas empresas, médicos...">
+      </div>
+
+      <!-- Situação Atual -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">3. Como esse problema é resolvido atualmente?</label>
+        <textarea class="w-full p-3 border rounded-lg focus:ring focus:ring-green-400" rows="3" placeholder="Explique se existem soluções concorrentes ou improvisadas..."></textarea>
+      </div>
+
+      <!-- Proposta de Valor -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">4. Qual a sua proposta de valor?</label>
+        <textarea class="w-full p-3 border rounded-lg focus:ring focus:ring-green-400" rows="3" placeholder="O que torna sua ideia única ou melhor que as alternativas?"></textarea>
+      </div>
+
+      <!-- Impacto Esperado -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">5. Qual impacto esperado?</label>
+        <select class="w-full p-3 border rounded-lg focus:ring focus:ring-green-400">
+          <option>Redução de custos</option>
+          <option>Aumento de produtividade</option>
+          <option>Melhoria na experiência do usuário</option>
+          <option>Inovação / Disrupção de mercado</option>
+        </select>
+      </div>
+
+      <!-- Monetização -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">6. Como esse produto pode gerar receita?</label>
+        <input type="text" class="w-full p-3 border rounded-lg focus:ring focus:ring-green-400" placeholder="Ex: assinatura mensal, taxa por uso, anúncios...">
+      </div>
+
+      <!-- Prioridade -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">7. Qual o nível de prioridade dessa ideia?</label>
+        <input type="range" min="1" max="5" value="3" class="w-full">
+        <p class="text-sm text-gray-500">1 = Baixa | 5 = Muito alta</p>
+      </div>
+
+      <!-- Botão -->
+      <div class="text-center">
+       
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
